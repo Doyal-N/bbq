@@ -1,5 +1,5 @@
 doctype html
-html
+html style=("background-image: url(#{asset_pack_path('media/images/sky.jpg')})")
   head
     title BBQ
     meta name="viewport" content="width=device-width,initial-scale=1"
@@ -10,8 +10,8 @@ html
     = javascript_pack_tag 'application'
 
   body
-    .container
-      .notification.is-light
-      = yield
-      footer.footer
-        .content.has-text-centered
+    section.section
+      .container
+        = yield
+      footer.footer.footer-color.mt-6
+        .content.has-text-centered НЕЧТО ВАЖНОЕ

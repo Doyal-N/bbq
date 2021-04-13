@@ -1,9 +1,28 @@
 = form_for @event do |f|
-  - if @event.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
-      ul
-        - @event.errors.full_messages.each do |message|
-          li = message
+  = render 'shared/errors', resource: @event
 
-  = f.submit class: 'button is-primary'
+  .field
+    = f.label :title, 'Название', class: 'label'
+    .control
+      = f.text_field :title, class: 'input is-primary is-rounded'
+
+  .field
+    = f.label :description, 'Описание', class: 'label'
+    .control
+      = f.text_field :description, class: 'input is-rounded'
+
+  .field
+    = f.label :address, 'Где проходит', class: 'label'
+    .control
+      = f.text_field :address, class: 'input is-primary is-rounded'
+
+  .field
+    = f.label :datetime, 'Дата', class: 'label'
+    .control
+      = f.date_field :datetime, class: 'input is-primary is-rounded'
+
+  .field.is-grouped
+    .control
+      = f.submit 'Submit', class: 'button is-link'
+    .control
+      = link_to 'Cancel', events_path, class: 'button is-link is-light'

@@ -1,0 +1,15 @@
+.column.is-two-fifths.mr-3.mt-3
+  .card
+    header.card-header
+      p.card-header-title.subtitle.is-4
+        = link_to event.title, event_path(event)
+    .card-image
+      figure.image.is-4by3
+        = image_pack_tag('event.jpg')
+    .panel-block= event.address
+    .panel-block= event.datetime
+
+    footer.card-footer
+      =link_to 'Show', event_path(event), class: 'card-footer-item card-color'
+      =link_to 'Edit', edit_event_path(event), class: 'card-footer-item card-color'
+      =link_to 'Delete', event_path(event), class: 'card-footer-item card-color', method: :delete

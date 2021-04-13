@@ -6,6 +6,7 @@
 import Rails from "@rails/ujs"
 
 Rails.start()
-Turbolinks.start()
 
 import "stylesheets/application"
+import "@fortawesome/fontawesome-free/js/all"
+const images = require.context('../images', true)

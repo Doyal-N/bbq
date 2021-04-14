@@ -1,9 +1,9 @@
 class User < ApplicationRecord
-  EMAIL = /\A\w+@\w+\.[a-z]+\z/.freeze
+  # Others available are: :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 
-  has_many :events
+  has_many :events, dependent: :destroy
 
-  validates :name, :email, presence: true
-  validates :name, length: { maximum: 30 }
-  validates :email, length: { maximum: 100 }, uniqueness: true, format: { with: EMAIL }
+  validates :name, length: { maximum: 15 }
 end

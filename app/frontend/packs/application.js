@@ -7,6 +7,8 @@ import Rails from "@rails/ujs"
 
 Rails.start()
 
+import 'packs/notification'
+
 import "stylesheets/application"
 import "@fortawesome/fontawesome-free/js/all"
 const images = require.context('../images', true)

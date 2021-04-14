@@ -1,3 +1,4 @@
-h1.is-3.color-white= @user.name
+h1.is-size-1.has-text-black.has-text-centered = @user.name
 
-= link_to 'Редактировать профиль', user_path(@user), class: 'button is-link is-light'
+= link_to 'Редактировать профиль', edit_user_path(@user), class: 'button is-link is-light'
+= link_to 'Назад', events_path, class: 'button is-link is-light ml-2'

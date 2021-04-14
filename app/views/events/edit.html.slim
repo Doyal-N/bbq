@@ -1,6 +1,6 @@
 .column.is-half
-  h1.title.has-text-white Editing event
+  h1.title.has-text-white Редактировать событие
 
-  = render 'form', event: @event
+  = render 'form', model: @event
 
-  = link_to 'Back', user_events_path(@event.user), class:'button is-link is-light mt-6'
+  = link_to 'Back', events_path, class:'button is-link is-light mt-6'

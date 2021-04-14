@@ -7,7 +7,7 @@
       figure.image.is-4by3
         = image_pack_tag('event.jpg')
     .panel-block= event.address
-    .panel-block= event.datetime
+    .panel-block= event.decorate.format_date
 
     footer.card-footer
       =link_to 'Show', event_path(event), class: 'card-footer-item card-color'

@@ -3,4 +3,4 @@
 
   = render 'form', event: @event
 
-  = link_to 'Back', event_path(@event), class:'button is-link is-light mt-6'
+  = link_to 'Back', user_events_path(@event.user), class:'button is-link is-light mt-6'

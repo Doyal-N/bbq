@@ -25,4 +25,4 @@
     .control
       = f.submit 'Submit', class: 'button is-link'
     .control
-      = link_to 'Cancel', events_path, class: 'button is-link is-light'
+      = link_to 'Cancel', user_events_path(@event.user), class: 'button is-link is-light'

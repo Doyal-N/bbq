@@ -1,23 +1,23 @@
 class EventsController < ApplicationController
+  before_action :set_user, only: %i[index new create]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
- def index
-    @events = Event.all
+  def index
+    @events = @user.events
   end
 
   def show
   end
 
   def new
-    @event = Event.new
+    @event = @user.events.build
   end
 
   def edit
   end
 
   def create
-    user = User.first
-    @event = user.events.new(event_params)
+    @event = @user.events.new(event_params)
 
     if @event.save
       redirect_to @event, notice: 'Event was successfully created.'
@@ -42,6 +42,10 @@ class EventsController < ApplicationController
   private
     def set_event
       @event = Event.find(params[:id])
+    end
+
+    def set_user
+      @user = User.find(params[:user_id])
     end
 
     def event_params

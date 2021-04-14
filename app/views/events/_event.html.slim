@@ -6,8 +6,8 @@
     .card-image
       figure.image.is-4by3
         = image_pack_tag('event.jpg')
-    .panel-block= event.address
-    .panel-block= event.decorate.format_date
+    .is-size-5.has-text-centered= event.address
+    span.tag.is-primary.is-medium= event.decorate.format_date
 
     footer.card-footer
       =link_to 'Show', event_path(event), class: 'card-footer-item card-color'

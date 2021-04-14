@@ -1,21 +1,26 @@
 .nav.navbar.footer-color
   .navbar-brand.ml-2
-    = link_to '#', class: 'navbar-item'
+  -if user_signed_in?
+    = link_to user_events_path(current_user), class: 'navbar-item'
       = image_pack_tag('event.png')
 
   .navbar-menu
+    p.control.ml-4
+      p.notice.has-text-success = notice
+  - unless user_signed_in?
     .navbar-start
       .navbar-item
         .field.is-grouped
           p.control
-            =link_to 'Регистрация', class: 'navbar-item'
-          p.control.ml-4
-            p.notice = notice
+            =link_to 'Регистрация', new_user_registration_path
+          p.control
+            = link_to 'Войти', new_user_session_path
 
+  - else
     .navbar-end
       .navbar-item
         .field.is-grouped
           p.control
-            =link_to 'Кабинет'
+            =link_to 'Кабинет', user_path(current_user)
           p.control.mr-3
-            =link_to 'Выйти'
+            =link_to 'Выйти', destroy_user_session_path, method: :delete

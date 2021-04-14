@@ -1,2 +1,3 @@
-h1 Users#show
-p Find me in app/views/users/show.html.slim
+h1.is-3.color-white= @user.name
+
+= link_to 'Редактировать профиль', user_path(@user), class: 'button is-link is-light'

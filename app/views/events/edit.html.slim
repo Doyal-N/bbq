@@ -1,6 +1,6 @@
 .column.is-half
   h1.title.color-white Editing event
 
-  = render 'form'
+  = render 'form', event: @event
 
   = link_to 'Back', event_path(@event), class:'button is-link is-light mt-6'

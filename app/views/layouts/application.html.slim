@@ -10,8 +10,9 @@ html style=("background-image: url(#{asset_pack_path('media/images/sky.jpg')})")
     = javascript_pack_tag 'application'
 
   body
-    section.section
-      .container
+    .container
+      = render 'shared/navbar'
+      section.section
         = yield
-      footer.footer.footer-color.mt-6
+      footer.footer.footer-color
         .content.has-text-centered НЕЧТО ВАЖНОЕ

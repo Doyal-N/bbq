@@ -1,5 +1,5 @@
-= form_for @event do |f|
-  = render 'shared/errors', resource: @event
+= form_for event do |f|
+  = render 'shared/errors', resource: event
 
   .field
     = f.label :title, 'Название', class: 'label'

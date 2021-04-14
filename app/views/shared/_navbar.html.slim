@@ -1,0 +1,19 @@
+.nav.navbar.footer-color
+  .navbar-brand.ml-2
+    = link_to events_path, class: 'navbar-item'
+      = image_pack_tag('event.png')
+
+  .navbar-menu
+    .navbar-start
+      .navbar-item
+        .field.is-grouped
+          p.control
+            =link_to 'Регистрация', class: 'navbar-item'
+
+    .navbar-end
+      .navbar-item
+        .field.is-grouped
+          p.control
+            =link_to 'Кабинет'
+          p.control.mr-3
+            =link_to 'Выйти'

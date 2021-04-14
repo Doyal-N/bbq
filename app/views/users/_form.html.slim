@@ -1,0 +1,22 @@
+= form_for user, html: {multipart: true} do |f|
+  = render 'shared/errors', resource: user
+
+  .field
+    = f.label :name, class: 'label'
+    .control.has-icons-left
+      = f.text_field :name, class: 'input is-primary is-rounded'
+      span.icon.is-small.is-left
+        i.fas.fa-user
+
+  .field
+    = f.label :email, class: 'label'
+    .control.has-icons-left
+      = f.text_field :email, class: 'input is-primary is-rounded mb-3'
+      span.icon.is-small.is-left
+        i.fas.fa-envelope
+
+  .field.is-grouped
+    .control
+      = f.submit 'Submit', class: 'button is-link'
+    .control
+      = link_to 'Cancel', events_path, class: 'button is-link is-light'

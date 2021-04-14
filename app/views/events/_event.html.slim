@@ -11,5 +11,6 @@
 
     footer.card-footer
       =link_to 'Show', event_path(event), class: 'card-footer-item card-color'
-      =link_to 'Edit', edit_event_path(event), class: 'card-footer-item card-color'
-      =link_to 'Delete', event_path(event), class: 'card-footer-item card-color', method: :delete
+      - if current_user_can_edit?(event)
+        =link_to 'Edit', edit_event_path(event), class: 'card-footer-item card-color'
+        =link_to 'Delete', event_path(event), class: 'card-footer-item card-color', method: :delete

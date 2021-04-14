@@ -1,4 +1,4 @@
-= form_with model: model, url: [@user, @event] do |f|
+= form_with model: model do |f|
   = render 'shared/errors', resource: model
 
   .field
@@ -25,4 +25,4 @@
     .control
       = f.submit 'Submit', class: 'button is-link'
     .control
-      = link_to 'Cancel', user_events_path(@event.user), class: 'button is-link is-light'
+      = link_to 'Cancel', events_path, class: 'button is-link is-light'

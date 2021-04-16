@@ -12,15 +12,15 @@
       .navbar-item
         .field.is-grouped
           p.control
-            =link_to 'Регистрация', new_user_registration_path
+            =link_to t('.registration'), new_user_registration_path
           p.control
-            = link_to 'Войти', new_user_session_path
+            = link_to t('.enter'), new_user_session_path
 
   - else
     .navbar-end
       .navbar-item
         .field.is-grouped
           p.control
-            =link_to 'Кабинет', user_path(current_user)
+            =link_to t('.account'), user_path(current_user)
           p.control.mr-3
-            =link_to 'Выйти', destroy_user_session_path, method: :delete
+            =link_to t('.exit'), destroy_user_session_path, method: :delete

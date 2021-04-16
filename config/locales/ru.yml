@@ -12,7 +12,7 @@ ru:
         password_confirmation: Подтверждение пароля
       event:
         title: Название
-        address: Место проведения
+        address: Место встречи
         datetime: Дата и время
         description: Описание
 
@@ -23,3 +23,68 @@ ru:
       destroyed: Вы удалили мероприятие
     users:
       updated: Вы обновили свой профиль
+
+  helpers:
+    submit:
+      event:
+        new: Создать Событие
+        edit: Сохранить Событие
+
+  devise:
+    registrations:
+      edit:
+        title: Редактировать личные данные
+        submit: Редактировать
+        back: Назад
+        delete: Удалить аккаунт
+        confirm: Вы уверены?
+      new:
+        title: Новый пользователь
+        password: Пароль
+        repeat_password: Повторите пароль
+        sign-up: Зарегистрироваться
+    sessions:
+      new:
+        account: Личный аккаунт
+        password: Пароль
+        log-in: Войти
+  events:
+    event:
+      show: Просмотр
+      edit: Редактировать
+      delete: Удалить
+    form:
+      cancel: Отменить
+    edit:
+      title: Редактировать событие
+      back: Назад
+    index:
+      title: События
+      create: Создать Событие
+    new:
+      title: Создать новое событие
+    show:
+      place: Место встречи
+      edit: Редактировать
+      back: Назад
+  layouts:
+    application:
+      title: Событийка
+      footer-info: Информация в футере
+  shared:
+    navbar:
+      registration: Регистрация
+      enter: Вход
+      account: Кабинет
+      exit: Выход
+  users:
+    form:
+      edit-profile: Изменить профиль
+      edit: Изменить пароль
+    edit:
+      title: Редактирование пользователя
+    show:
+      edit: Редактировать профиль
+      back: Назад
+      create: Организовал
+      text: На данный момент участник не создавал событий!

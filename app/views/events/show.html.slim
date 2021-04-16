@@ -11,8 +11,8 @@ h1.title.is-1.has-text-centered.is-uppercase.is-family-code.has-text-white= @eve
       p.is-size-3 = l(@event.datetime, format: :short)
       p.is-size-5 = @event.description
       strong
-        u Место встречи
+        u= t('.place')
       = link_to " #{@event.address}", "https://yandex.ru/maps/?text=#{@event.address}"
     - if current_user_can_edit?(@event)
-      =link_to 'Edit', edit_event_path(@event), class:'button is-link is-light mt-6'
-    =link_to 'Back', events_path, class:'button is-link is-light mt-6 ml-3'
+      = link_to t('.edit'), edit_event_path(@event), class:'button is-link is-light mt-6'
+    = link_to t('.back'), events_path, class:'button is-link is-light mt-6 ml-3'

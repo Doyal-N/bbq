@@ -21,7 +21,7 @@ module BBQ
     #
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
-    config.i18n.available_locales = [:ru, :en]
+    config.i18n.available_locales = [:ru]
     config.i18n.default_locale = :ru
     config.time_zone = 'Asia/Yekaterinburg'
     # config.eager_load_paths << Rails.root.join("extras")

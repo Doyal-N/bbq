@@ -2,27 +2,27 @@
   = render 'shared/errors', resource: model
 
   .field
-    = f.label :title, 'Название', class: 'label'
+    = f.label :title, class: 'label'
     .control
       = f.text_field :title, class: 'input is-primary is-rounded'
 
   .field
-    = f.label :description, 'Описание', class: 'label'
+    = f.label :description, class: 'label'
     .control
       = f.text_field :description, class: 'input is-rounded'
 
   .field
-    = f.label :address, 'Где проходит', class: 'label'
+    = f.label :address, class: 'label'
     .control
       = f.text_field :address, class: 'input is-primary is-rounded'
 
   .field
-    = f.label :datetime, 'Дата', class: 'label'
+    = f.label :datetime, class: 'label'
     .control
       = f.datetime_local_field :datetime, class: 'input is-primary is-rounded'
 
   .field.is-grouped
     .control
-      = f.submit 'Submit', class: 'button is-link'
+      = f.submit class: 'button is-link'
     .control
-      = link_to 'Cancel', events_path, class: 'button is-link is-light'
+      = link_to t('.cancel'), events_path, class: 'button is-link is-light'

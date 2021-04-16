@@ -1,7 +1,7 @@
 .columns.is-centered
   .column.is-half
 
-    h2.title.is-2 Личный аккаунт
+    h2.title.is-2= t('.account')
 
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
 
@@ -15,7 +15,7 @@
       .field
         = f.label :password, class: 'label has-text-black'
         .control.has-icons-left
-          = f.password_field :password, class: 'input', placeholder: "Password"
+          = f.password_field :password, class: 'input', placeholder: t('.password')
           span.icon.is-small.is-left
             i.fas.fa-lock
 
@@ -25,4 +25,4 @@
           = f.label :remember_me, class: 'has-text-black'
 
       .actions
-        = f.submit "Log in", class: 'button is-link'
+        = f.submit t('.log-in'), class: 'button is-link'

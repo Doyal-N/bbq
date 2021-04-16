@@ -10,7 +10,7 @@
     span.tag.is-primary.is-medium= l(event.datetime, format: :short)
 
     footer.card-footer
-      =link_to 'Show', event_path(event), class: 'card-footer-item card-color'
+      =link_to t('.show'), event_path(event), class: 'card-footer-item card-color'
       - if current_user_can_edit?(event)
-        =link_to 'Edit', edit_event_path(event), class: 'card-footer-item card-color'
-        =link_to 'Delete', event_path(event), class: 'card-footer-item card-color', method: :delete
+        =link_to t('.edit'), edit_event_path(event), class: 'card-footer-item card-color'
+        =link_to t('.delete'), event_path(event), class: 'card-footer-item card-color', method: :delete

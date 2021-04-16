@@ -6,7 +6,7 @@ ru:
 
     attributes:
       user:
-        email: Электронная адрес
+        email: Email
         name: Имя
         password: Пароль
         password_confirmation: Подтверждение пароля

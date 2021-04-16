@@ -1,0 +1,5 @@
+- flash.each do |type, flash|
+  - type = type == 'notice' ? 'primary' : 'danger'
+  = content_tag :article, class: "message is-#{type}"
+    .message-body
+      = flash

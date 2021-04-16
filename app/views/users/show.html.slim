@@ -8,5 +8,8 @@ h1.is-size-1.has-text-black.has-text-centered = @user.name
 
 h2.title.is-3.mt-5 Организовал
 hr
-.columns.is-flex-wrap-wrap.is-justify-content-space-between
-  = render partial: 'events/event', collection: @user.events
+- if @user.events.present?
+  .columns.is-flex-wrap-wrap.is-justify-content-space-between
+    = render partial: 'events/event', collection: @user.events
+- else
+  p На данный момент участник не создавал событий!

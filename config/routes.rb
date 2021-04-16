@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
   root "events#index"
+  devise_for :users, path_names: { sign_in: :login, sign_out: :logout  }
 
   resources :events
   resources :users, only: [:show, :edit, :update]

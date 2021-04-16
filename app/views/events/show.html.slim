@@ -8,7 +8,7 @@ h1.title.is-1.has-text-centered.is-uppercase.is-family-code.has-text-white= @eve
           = image_pack_tag('event.jpg')
   .column.is-half
     .box
-      p.is-size-3 = @event.decorate.format_date
+      p.is-size-3 = l(@event.datetime, format: :short)
       p.is-size-5 = @event.description
       strong
         u Место встречи

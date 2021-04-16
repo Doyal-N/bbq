@@ -4,7 +4,7 @@
     h2.title.is-2 Новый пользователь
 
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-      = render "devise/shared/error_messages", resource: resource
+      = render 'shared/errors', resource: resource
 
       .field
         = f.label :email, class: 'label has-text-black'

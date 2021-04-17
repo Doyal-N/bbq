@@ -2,7 +2,7 @@ doctype html
 html style=("background-image: url(#{asset_pack_path('media/images/sky.jpg')})")
   head
 
-    title BBQ
+    title= t('.title')
     meta name="viewport" content="width=device-width,initial-scale=1"
     = csrf_meta_tags
     = csp_meta_tag
@@ -16,4 +16,4 @@ html style=("background-image: url(#{asset_pack_path('media/images/sky.jpg')})")
       section.section
         = yield
       footer.footer.footer-color
-        .content.has-text-centered.has-text-white НЕЧТО ВАЖНОЕ
+        .content.has-text-centered.has-text-white= t('.footer-info')

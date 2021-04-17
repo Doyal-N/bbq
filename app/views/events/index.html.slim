@@ -1,6 +1,6 @@
-h1.title.is-1.has-text-centered.is-uppercase.is-family-code.has-text-white События
+h1.title.is-1.has-text-centered.is-uppercase.is-family-code.has-text-white= t('.title')
 
 .columns.is-flex-wrap-wrap.is-justify-content-space-around
   = render partial: 'events/event', collection: @events
 
-= link_to 'Создать Событие', new_event_path, class:'button is-link is-light mt-5 mb-4'
+= link_to t('.create'), new_event_path, class:'button is-link mt-5 mb-4'

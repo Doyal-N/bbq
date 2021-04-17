@@ -1,15 +1,15 @@
 h1.is-size-1.has-text-black.has-text-centered = @user.name
 .columns.is-centered
   figure.image.is-128x128
-    img.is-rounded src="#{asset_pack_path 'media/images/ava.jpg'}"
+    = image_pack_tag('media/images/ava.jpg', class: 'is-rounded')
 
-= link_to 'Редактировать профиль', edit_user_path(@user), class: 'button is-link is-light'
-= link_to 'Назад', events_path, class: 'button is-link is-light ml-2'
+= link_to t('.edit'), edit_user_path(@user), class: 'button is-link is-light'
+= link_to t('.back'), events_path, class: 'button is-link is-light ml-2'
 
-h2.title.is-3.mt-5 Организовал
+h2.title.is-3.mt-5= t('.create')
 hr
 - if @user.events.present?
   .columns.is-flex-wrap-wrap.is-justify-content-space-between
     = render partial: 'events/event', collection: @user.events
 - else
-  p На данный момент участник не создавал событий!
+  p= t('.text')

@@ -17,6 +17,6 @@
 
   .field.is-grouped
     .control
-      = f.submit 'Submit', class: 'button is-link'
+      = f.submit t('.edit-profile'), class: 'button is-link'
     .control
-      = link_to 'Edit password', edit_user_registration_path, class: 'button is-link is-light'
+      = link_to t('.edit'), edit_user_registration_path, class: 'button is-link is-light'

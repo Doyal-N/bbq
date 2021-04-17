@@ -1,13 +1,13 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, except: %i[:show :index]
-  before_action :set_event, only: [:show]
-  before_action :set_current_user_event, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: %i[show index]
+  before_action :set_current_user_event, only: %i[edit update destroy]
 
   def index
     @events = Event.all
   end
 
   def show
+    @event = Event.find(params[:id])
   end
 
   def new
@@ -44,10 +44,6 @@ class EventsController < ApplicationController
 
   def set_current_user_event
     @event = current_user.events.find(params[:id])
-  end
-
-  def set_event
-    @event = Event.find(params[:id])
   end
 
   def event_params

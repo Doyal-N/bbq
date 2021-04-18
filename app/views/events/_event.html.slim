@@ -13,4 +13,5 @@
       =link_to t('.show'), event_path(event), class: 'card-footer-item card-color'
       - if current_user_can_edit?(event)
         =link_to t('.edit'), edit_event_path(event), class: 'card-footer-item card-color'
-        =link_to t('.delete'), event_path(event), class: 'card-footer-item card-color has-background-danger has-text-black', method: :delete
+        =link_to t('.delete'), event_path(event), class: 'card-footer-item card-color has-background-danger has-text-black', \
+          method: :delete, data: { confirm: t('.sure') }

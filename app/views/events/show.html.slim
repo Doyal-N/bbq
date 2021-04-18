@@ -15,5 +15,7 @@ h1.title.is-1.has-text-centered.is-uppercase.is-family-code.has-text-white= @eve
       = link_to " #{@event.address}", "https://yandex.ru/maps/?text=#{@event.address}"
     - if current_user_can_edit?(@event)
       = link_to t('.edit'), edit_event_path(@event), class:'button is-link is-light mt-6'
-      =link_to t('.delete'), event_path(@event), class: 'button is-danger has-text-black mt-6 ml-3', method: :delete
+      = link_to t('.delete'), event_path(@event), class: 'button is-danger has-text-black mt-6 ml-3', \
+        method: :delete, data: { confirm: t('.sure') }
+
     = link_to t('.back'), events_path, class:'button is-link is-light mt-6 ml-3'

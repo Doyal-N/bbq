@@ -1,1 +1,22 @@
 en:
+  events:
+    show:
+      delete: Delete
+      edit: Edit
+      back: Back
+      place: Meeting point
+    form:
+      cancel: Cancel
+    edit:
+      back: Back
+      title: Edit event
+    event:
+      show: Show
+      edit: Edit
+      delete: Delete
+      sure: Are you sure?
+    index:
+      create: Create
+      title: Events
+    new:
+      title: Create new event

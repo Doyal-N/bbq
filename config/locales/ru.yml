@@ -3,7 +3,6 @@ ru:
     models:
       user: Пользователь
       event: Событие
-
     attributes:
       user:
         email: Email
@@ -15,7 +14,6 @@ ru:
         address: Место встречи
         datetime: Дата и время
         description: Описание
-
   controllers:
     events:
       created: Вы создали новое мероприятие
@@ -23,13 +21,11 @@ ru:
       destroyed: Вы удалили мероприятие
     users:
       updated: Вы обновили свой профиль
-
   helpers:
     submit:
       event:
         new: Создать Событие
         edit: Сохранить Событие
-
   devise:
     registrations:
       edit:
@@ -53,6 +49,7 @@ ru:
       show: Просмотр
       edit: Редактировать
       delete: Удалить
+      sure: Вы точно хотите удалить событие?
     form:
       cancel: Отменить
     edit:
@@ -67,6 +64,8 @@ ru:
       place: Место встречи
       edit: Редактировать
       back: Назад
+      sure: Вы уверены?
+      delete: Удалить
   layouts:
     application:
       title: Событийка

@@ -1,0 +1,13 @@
+article.message
+  .message-header
+    span.tag.is-warning
+      - if comment.user.present?
+        = render partial: 'users/user', object: comment.user
+      - else
+        strong = comment.user_name
+      em.ml-1= l(comment.created_at, format: :short)
+
+    - if current_user_can_edit?(comment)
+      = link_to comment_path(comment), method: :delete, data: { confirm: 'Вы уверены?' }
+        button.delete
+  .message-body= comment.body

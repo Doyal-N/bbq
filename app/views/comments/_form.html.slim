@@ -1,0 +1,16 @@
+= form_with model: [@event, comment] do |f|
+  = render partial: 'shared/errors', locals: { resource: comment }
+
+  .field
+    = f.label :body, class: 'label has-text-white'
+    .control
+      = f.text_area(:body, cols: 3, rows: 3, class: 'textarea is-primary has-fixed-size')
+
+  - unless user_signed_in?
+    .field
+      = f.label :user_name, class: 'label has-text-white'
+      .control
+        = f.text_field :user_name, class: 'input is-primary'
+
+  .actions.mb-6
+    = f.submit 'Отправить', class: 'button is-link'

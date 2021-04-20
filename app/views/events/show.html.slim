@@ -19,3 +19,8 @@ h1.title.is-1.has-text-centered.is-uppercase.is-family-code.has-text-white= @eve
         method: :delete, data: { confirm: t('.sure') }
 
     = link_to t('.back'), events_path, class:'button is-link is-light mt-6 ml-3'
+
+.column.is-half
+  = render partial: 'comments/comment', collection: @event.comments.except(@new_comment)
+  p.is-size-4.has-text-dark Оставить комментарий
+  = render partial: 'comments/form', locals: { comment: @new_comment || @event.comments.build }

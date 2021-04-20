@@ -21,6 +21,14 @@ ru:
       destroyed: Вы удалили мероприятие
     users:
       updated: Вы обновили свой профиль
+    comments:
+      created: Комментарий создан
+      error: Ошибка c комментарием
+      destroyed: Комментарий удален
+    subscriptions:
+      created: Успешно подписались на событие
+      error: Ошибка при подписке
+      destroyed: Подписка аннулирована!
   helpers:
     submit:
       event:

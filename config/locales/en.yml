@@ -12,3 +12,12 @@ en:
       created: You create new event
       updated: You update event
       destroyed: You deleted event
+  events:
+    show:
+      place: Point
+      edit: Edit
+      delete: Delete
+      sure: Are you sure?
+      producer: Event producer
+      subscribe: Subsribers
+      comment: Comment

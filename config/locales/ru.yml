@@ -3,6 +3,8 @@ ru:
     models:
       user: Пользователь
       event: Событие
+      comment: Комментарий
+      subscription: Подписка на событие
     attributes:
       user:
         email: Email
@@ -14,6 +16,13 @@ ru:
         address: Место встречи
         datetime: Дата и время
         description: Описание
+      comment:
+        user_name: Имя
+        user_email: Email
+        body: Текст
+      subscription:
+        user_name: Имя
+        user_email: Email
   controllers:
     events:
       created: Вы создали новое мероприятие
@@ -71,9 +80,11 @@ ru:
     show:
       place: Место встречи
       edit: Редактировать
-      back: Назад
       sure: Вы уверены?
       delete: Удалить
+      comment: Оставить комментарий
+      subscribe: Подписаны на событие
+      producer: Организатор
   layouts:
     application:
       title: Событийка
@@ -96,3 +107,14 @@ ru:
       back: Назад
       create: Организовал
       text: На данный момент участник не создавал событий!
+  comments:
+    comment:
+      confirm: Вы уверены?
+    form:
+      send: Отправить
+      back: Назад
+  subscriptions:
+    form:
+      subscribe: Подписаться
+    subscription:
+      confirm: Вы уверены?

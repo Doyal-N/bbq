@@ -16,12 +16,12 @@ class SubscriptionsController < ApplicationController
     message = {notice: t('controllers.subscriptions.destroyed')}
 
     if current_user_can_edit?(@subscription)
-      @subscription.destroy
+      @subscription.destroy!
     else
       message = {alert: t('controllers.subscriptions.error')}
     end
 
-    render 'events/show', message
+    redirect_to @subscription.event, message
   end
 
   private

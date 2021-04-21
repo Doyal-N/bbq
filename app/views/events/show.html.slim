@@ -6,7 +6,7 @@ h1.title.is-1.has-text-centered.is-uppercase.is-family-code.has-text-white= @eve
       .card-image
         figure.image.is-4by3
           = image_pack_tag('event.jpg')
-  .column.is-half
+
     .box
       p.is-size-3 = l(@event.datetime, format: :short)
       p.is-size-5 = @event.description
@@ -14,13 +14,17 @@ h1.title.is-1.has-text-centered.is-uppercase.is-family-code.has-text-white= @eve
         u= t('.place')
       = link_to " #{@event.address}", "https://yandex.ru/maps/?text=#{@event.address}"
     - if current_user_can_edit?(@event)
-      = link_to t('.edit'), edit_event_path(@event), class:'button is-link is-light mt-6'
-      = link_to t('.delete'), event_path(@event), class: 'button is-danger has-text-black mt-6 ml-3', \
+      = link_to t('.edit'), edit_event_path(@event), class:'button is-link is-light mt-3'
+      = link_to t('.delete'), event_path(@event), class: 'button is-danger has-text-black mt-3 ml-3', \
         method: :delete, data: { confirm: t('.sure') }
 
-    = link_to t('.back'), events_path, class:'button is-link is-light mt-6 ml-3'
+    p.title.mt-3= "#{t('.producer')} - #{@event.user.name}"
+    article.panel.is-info
+    p.panel-heading= t('.subscribe')
+    = render partial: 'subscriptions/subscription', collection: @event.subscriptions.except(@new_subscription)
+    .mt-6= render partial: 'subscriptions/form', locals: { subscription: @new_subscription || @event.subscriptions.build }
 
-.column.is-half
-  = render partial: 'comments/comment', collection: @event.comments.except(@new_comment)
-  p.is-size-4.has-text-dark Оставить комментарий
-  = render partial: 'comments/form', locals: { comment: @new_comment || @event.comments.build }
+  .column.is-half
+    = render partial: 'comments/comment', collection: @event.comments.except(@new_comment)
+    p.is-size-4.has-text-dark= t('.comment')
+    = render partial: 'comments/form', locals: { comment: @new_comment || @event.comments.build }

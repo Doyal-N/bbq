@@ -3,6 +3,10 @@ h1.is-size-1.has-text-black.has-text-centered = @user.name
   figure.image.is-128x128
     = image_pack_tag('media/images/ava.jpg', class: 'is-rounded')
 
+  - if @user.avatar.attached?
+    strong Image:
+    = image_pack_tag @user.avatar
+
 = link_to t('.edit'), edit_user_path(@user), class: 'button is-link is-light'
 = link_to t('.back'), events_path, class: 'button is-link is-light ml-2'
 

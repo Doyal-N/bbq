@@ -15,8 +15,17 @@
       span.icon.is-small.is-left
         i.fas.fa-envelope
 
-  .field.is-grouped
+  = f.file_field :avatar
+
+  .field.is-grouped.mt-5
     .control
       = f.submit t('.edit-profile'), class: 'button is-link'
     .control
       = link_to t('.edit'), edit_user_registration_path, class: 'button is-link is-light'
+
+
+  / .file.is-info
+  /   span.file-cta
+  /     span.file-icon
+  /       i.fas.fa-upload
+  /     span.file-label

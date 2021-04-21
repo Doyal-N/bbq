@@ -8,3 +8,7 @@ en:
       created: Comment created
       error: Comment errors
       destroyed: Comment destroyed
+    events:
+      created: You create new event
+      updated: You update event
+      destroyed: You deleted event

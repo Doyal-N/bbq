@@ -22,9 +22,9 @@ h1.title.is-1.has-text-centered.is-uppercase.is-family-code.has-text-white= @eve
     article.panel.is-info
     p.panel-heading= t('.subscribe')
     = render partial: 'subscriptions/subscription', collection: @event.subscriptions.except(@new_subscription)
-    .mt-6= render partial: 'subscriptions/form', locals: { subscription: @event.subscriptions.build }
+    .mt-6= render partial: 'subscriptions/form', locals: { subscription: @new_subscription || @event.subscriptions.build }
 
   .column.is-half
     = render partial: 'comments/comment', collection: @event.comments.except(@new_comment)
     p.is-size-4.has-text-dark= t('.comment')
-    = render partial: 'comments/form', locals: { comment: @event.comments.build }
+    = render partial: 'comments/form', locals: { comment: @new_comment || @event.comments.build }

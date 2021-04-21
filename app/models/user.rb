@@ -10,6 +10,6 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 15 }
 
   def creator?(model)
-    self.id = model.user_id
+    self.id == model.user_id
   end
 end

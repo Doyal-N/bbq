@@ -15,19 +15,11 @@ class Subscription < ApplicationRecord
   end
 
   def user_name
-    if user.present?
-      user.name
-    else
-      super
-    end
+    user&.name || super
   end
 
   def user_email
-    if user.present?
-      user.email
-    else
-      super
-    end
+    user&.email || super
   end
 
   private

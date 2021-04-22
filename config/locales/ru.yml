@@ -3,6 +3,7 @@ ru:
     errors:
       messages:
         taken_email: уже существует в системе
+        creator: не может стать подписчиком своего события
     models:
       user: Пользователь
       event: Событие

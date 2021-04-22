@@ -4,6 +4,7 @@ class Subscription < ApplicationRecord
 
   with_options if: -> { user.present? } do
     validates :user, uniqueness: { scope: :event_id }
+    validate :check_user_for_event
   end
 
   with_options unless: -> { user.present? } do
@@ -24,8 +25,14 @@ class Subscription < ApplicationRecord
   private
 
   def check_email_on_exists
-    return unless User.find_by(email: user_email)
+    return unless User.find_by(email: user_email).present?
 
     errors.add(:user_email, :taken_email)
+  end
+
+  def check_user_for_event
+    return unless user.creator?(event)
+
+    errors.add(:user, :creator)
   end
 end

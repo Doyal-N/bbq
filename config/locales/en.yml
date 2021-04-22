@@ -21,3 +21,11 @@ en:
       producer: Event producer
       subscribe: Subsribers
       comment: Comment
+  '':
+    '':
+      '':
+        models:
+          subscription:
+            rb:
+              exist: already subscribe
+    exist: уже подписан

@@ -9,7 +9,15 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 15 }
 
+  after_commit :link_subscriptions, on: :create
+
   def creator?(model)
-    self.id == model.user_id
+    id == model.user_id
+  end
+
+  private
+
+  def link_subscriptions
+    Subscription.where(user_id: nil, user_email: email).update_all(user_id: id)
   end
 end

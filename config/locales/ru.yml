@@ -2,7 +2,7 @@ ru:
   activerecord:
     errors:
       messages:
-        taken_email: уже подписан на событие
+        taken_email: уже существует в системе
     models:
       user: Пользователь
       event: Событие

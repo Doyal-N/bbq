@@ -11,7 +11,7 @@ class Subscription < ApplicationRecord
     validates :user_name, presence: true
     validates :user_email, presence: true, format: { with: /\A\w+@\w+\.[a-z]+\z/ }
     validates :user_email, uniqueness: { scope: :event_id }
-    validate :check_email_on_exists
+    validate :user_is_not_creator_of_event
   end
 
   def user_name
@@ -30,7 +30,7 @@ class Subscription < ApplicationRecord
     errors.add(:user_email, :taken_email)
   end
 
-  def check_user_for_event
+  def user_is_not_creator_of_event
     return unless user.creator?(event)
 
     errors.add(:user, :creator)

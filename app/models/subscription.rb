@@ -4,14 +4,14 @@ class Subscription < ApplicationRecord
 
   with_options if: -> { user.present? } do
     validates :user, uniqueness: { scope: :event_id }
-    validate :check_user_for_event
+    validate :user_is_not_creator_of_event
   end
 
   with_options unless: -> { user.present? } do
     validates :user_name, presence: true
     validates :user_email, presence: true, format: { with: /\A\w+@\w+\.[a-z]+\z/ }
     validates :user_email, uniqueness: { scope: :event_id }
-    validate :user_is_not_creator_of_event
+    validate :check_email_on_exists
   end
 
   def user_name

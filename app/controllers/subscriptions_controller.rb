@@ -13,12 +13,12 @@ class SubscriptionsController < ApplicationController
 
   def destroy
     @subscription = Subscription.find(params[:id])
-    message = {notice: t('controllers.subscriptions.destroyed')}
+    message = { notice: t('controllers.subscriptions.destroyed')}
 
     if current_user_can_edit?(@subscription)
       @subscription.destroy!
     else
-      message = {alert: t('controllers.subscriptions.error')}
+      message = { alert: t('controllers.subscriptions.error') }
     end
 
     redirect_to @subscription.event, message

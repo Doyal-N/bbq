@@ -1,5 +1,9 @@
 ru:
   activerecord:
+    errors:
+      messages:
+        taken_email: уже существует в системе
+        creator: не может стать подписчиком своего события
     models:
       user: Пользователь
       event: Событие
@@ -23,6 +27,7 @@ ru:
       subscription:
         user_name: Имя
         user_email: Email
+        user: Пользователь
   controllers:
     events:
       created: Вы создали новое мероприятие
@@ -118,3 +123,11 @@ ru:
       subscribe: Подписаться
     subscription:
       confirm: Вы уверены?
+  "":
+    "":
+      "":
+        models:
+          subscription:
+            rb:
+              exist: уже подсписан
+              taken: ""

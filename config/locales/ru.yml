@@ -1,8 +1,14 @@
 ru:
   activerecord:
+    errors:
+      messages:
+        taken_email: уже существует в системе
+        creator: не может стать подписчиком своего события
     models:
       user: Пользователь
       event: Событие
+      comment: Комментарий
+      subscription: Подписка на событие
     attributes:
       user:
         email: Email
@@ -14,6 +20,14 @@ ru:
         address: Место встречи
         datetime: Дата и время
         description: Описание
+      comment:
+        user_name: Имя
+        user_email: Email
+        body: Текст
+      subscription:
+        user_name: Имя
+        user_email: Email
+        user: Пользователь
   controllers:
     events:
       created: Вы создали новое мероприятие
@@ -21,6 +35,14 @@ ru:
       destroyed: Вы удалили мероприятие
     users:
       updated: Вы обновили свой профиль
+    comments:
+      created: Комментарий создан
+      error: Ошибка c комментарием
+      destroyed: Комментарий удален
+    subscriptions:
+      created: Успешно подписались на событие
+      error: Ошибка при подписке
+      destroyed: Подписка аннулирована!
   helpers:
     submit:
       event:
@@ -63,9 +85,11 @@ ru:
     show:
       place: Место встречи
       edit: Редактировать
-      back: Назад
       sure: Вы уверены?
       delete: Удалить
+      comment: Оставить комментарий
+      subscribe: Подписаны на событие
+      producer: Организатор
   layouts:
     application:
       title: Событийка
@@ -88,3 +112,22 @@ ru:
       back: Назад
       create: Организовал
       text: На данный момент участник не создавал событий!
+  comments:
+    comment:
+      confirm: Вы уверены?
+    form:
+      send: Отправить
+      back: Назад
+  subscriptions:
+    form:
+      subscribe: Подписаться
+    subscription:
+      confirm: Вы уверены?
+  "":
+    "":
+      "":
+        models:
+          subscription:
+            rb:
+              exist: уже подсписан
+              taken: ""

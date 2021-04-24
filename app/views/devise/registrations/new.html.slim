@@ -7,6 +7,13 @@
       = render 'shared/errors', resource: resource
 
       .field
+        = f.label :name, class: 'label has-text-black'
+        .control.has-icons-left
+          = f.text_field :name, class: 'input'
+          span.icon.is-small.is-left
+            i.fas.fa-user
+
+      .field
         = f.label :email, class: 'label has-text-black'
         .control.has-icons-left
           = f.text_field :email, class: 'input'

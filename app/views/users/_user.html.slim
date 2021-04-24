@@ -1,0 +1,5 @@
+=image_pack_tag('media/images/ava.jpg', class: 'image is-24x24')
+- if request.path == user_path(user)
+  = user.name
+- else
+  = link_to user.name, user_path(user), class: 'ml-1'

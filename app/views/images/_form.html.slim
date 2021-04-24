@@ -1,0 +1,17 @@
+= form_with model: [@event, image] do |f|
+  = render partial: 'shared/errors', locals: { resource: image }
+
+  .field
+    = f.label :title, class: 'label'
+    .control
+      = f.text_field :title, class: 'input is-primary'
+
+  .file.is-info
+    span.file-cta
+      span.file-icon
+        i.fas.fa-upload
+      span.file-label
+      = f.file_field :image
+
+  .control
+    = f.submit t('.send'), class: 'button is-link mt-3 mb-6'

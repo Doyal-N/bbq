@@ -4,11 +4,13 @@ ru:
       messages:
         taken_email: уже существует в системе
         creator: не может стать подписчиком своего события
+        not_add: не может быть добавлен
     models:
       user: Пользователь
       event: Событие
       comment: Комментарий
       subscription: Подписка на событие
+      image: Картинка
     attributes:
       user:
         email: Email
@@ -28,6 +30,9 @@ ru:
         user_name: Имя
         user_email: Email
         user: Пользователь
+      image:
+        title: Название
+        image: Файл
   controllers:
     events:
       created: Вы создали новое мероприятие
@@ -43,6 +48,10 @@ ru:
       created: Успешно подписались на событие
       error: Ошибка при подписке
       destroyed: Подписка аннулирована!
+    photos:
+      created: Картинка успешно добавлено
+      error: Ошибка добавления
+      destroyed: Картинка удалена
   helpers:
     submit:
       event:
@@ -131,3 +140,11 @@ ru:
             rb:
               exist: уже подсписан
               taken: ""
+  photos:
+    form:
+      send: Отправить
+  images:
+    form:
+      send: Отправить
+    image:
+      sure: Вы уверены?

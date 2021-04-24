@@ -1,31 +1,11 @@
 en:
   controllers:
-    subscriptions:
-      destroyed: Subscription deleted
-      created: Succesfull subscription
-      error: Subscription errors
-    comments:
-      created: Comment created
-      error: Comment errors
-      destroyed: Comment destroyed
-    events:
-      created: You create new event
-      updated: You update event
-      destroyed: You deleted event
-  events:
-    show:
-      place: Point
-      edit: Edit
-      delete: Delete
+    photos:
+      created: Image added
+      error: Errors added
+      destroyed: Image destroyed!
+  images:
+    form:
+      send: Send
+    image:
       sure: Are you sure?
-      producer: Event producer
-      subscribe: Subsribers
-      comment: Comment
-  '':
-    '':
-      '':
-        models:
-          subscription:
-            rb:
-              exist: already subscribe
-    exist: уже подписан

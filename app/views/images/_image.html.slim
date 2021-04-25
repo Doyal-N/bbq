@@ -1,4 +1,9 @@
 - if image.image.attached?
   figure.mb-4.image.is-256x256
+    - if current_user_can_edit?(image)
+      = link_to image_path(image), method: :delete, data: { confirm: t('.sure') }
+        .cl-btn-2
+          .
+            .leftright
+            .rightleft
     = image_tag(url_for(image.image))
-    = link_to 'del', image_path(image), method: :delete, data: { confirm: t('.sure') }

@@ -54,7 +54,7 @@ $text_white: white;
 }
 
 .cl-btn-2 {
-  margin: 0;
+  margin: -35px;
   display: flex;
   justify-content: flex-end;
 }
@@ -62,8 +62,8 @@ $text_white: white;
 .cl-btn-2 div {
   cursor: pointer;
   position: relative;
-  height: 68px;
-  width: 50px;
+  height: 70px;
+  width: 56px;
 }
 
 .cl-btn-2 .leftright {
@@ -91,7 +91,7 @@ $text_white: white;
 .cl-btn-2 .close-btn {
   margin: 54px 0 0 -5px;
   position: absolute;
-  color: black;
+  color: #337AB7;
   font-family: Tahoma, sans-serif;
   font-size: 13px;
   font-weight: bold;

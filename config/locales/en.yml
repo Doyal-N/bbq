@@ -9,3 +9,7 @@ en:
       send: Send
     image:
       sure: Are you sure?
+  events:
+    show:
+      photo: Add photo
+      edit: Edit

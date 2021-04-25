@@ -99,6 +99,7 @@ ru:
       comment: Оставить комментарий
       subscribe: Подписаны на событие
       producer: Организатор
+      photo: Добавить фото
   layouts:
     application:
       title: Событийка
@@ -132,14 +133,14 @@ ru:
       subscribe: Подписаться
     subscription:
       confirm: Вы уверены?
-  "":
-    "":
-      "":
+  '':
+    '':
+      '':
         models:
           subscription:
             rb:
               exist: уже подсписан
-              taken: ""
+              taken: ''
   photos:
     form:
       send: Отправить

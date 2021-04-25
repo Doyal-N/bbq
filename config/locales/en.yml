@@ -13,6 +13,12 @@ en:
     show:
       photo: Add photo
       edit: Edit
+      place: Venie
+      delete: Delete
+      sure: Are you sure?
+      producer: Producer
+      subscribe: Subscribe
+      comment: Add comment
   layouts:
     application:
       title: Eve&Event

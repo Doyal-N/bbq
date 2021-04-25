@@ -24,8 +24,9 @@ h1.title.is-1.has-text-centered.is-uppercase.is-family-code.has-text-white= @eve
     = render partial: 'subscriptions/subscription', collection: @event.subscriptions.except(@new_subscription)
     .mt-6= render partial: 'subscriptions/form', locals: { subscription: @new_subscription || @event.subscriptions.build }
 
-    h2.is-size-4.mb-3.mt-6= t('.photo')
-    = render partial: 'images/form', locals: { image: @new_image || @event.images.build }
+    - if current_user_can_edit?(@event)
+      h2.is-size-4.mb-3.mt-6= t('.photo')
+      = render partial: 'images/form', locals: { image: @new_image || @event.images.build }
 
   .column.is-half
     = render partial: 'images/image', collection: @event.images.except(@new_image)

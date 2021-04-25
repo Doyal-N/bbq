@@ -49,7 +49,7 @@ ru:
       error: Ошибка при подписке
       destroyed: Подписка аннулирована!
     photos:
-      created: Картинка успешно добавлено
+      created: Картинка успешно добавлена
       error: Ошибка добавления
       destroyed: Картинка удалена
   helpers:
@@ -133,14 +133,14 @@ ru:
       subscribe: Подписаться
     subscription:
       confirm: Вы уверены?
-  '':
-    '':
-      '':
+  "":
+    "":
+      "":
         models:
           subscription:
             rb:
               exist: уже подсписан
-              taken: ''
+              taken: ""
   photos:
     form:
       send: Отправить

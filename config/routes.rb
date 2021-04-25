@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :events, shallow: true do
     resources :comments, only: [:create, :destroy]
     resources :subscriptions, only: [:create, :destroy]
+    resources :images, only: [:create, :destroy]
   end
 
   resources :users, only: [:show, :edit, :update]

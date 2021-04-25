@@ -52,3 +52,64 @@ $text_white: white;
 .nav a {
   color: $text_white;
 }
+
+.cl-btn-2 {
+  margin: -35px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cl-btn-2 div {
+  cursor: pointer;
+  position: relative;
+  height: 70px;
+  width: 56px;
+}
+
+.cl-btn-2 .leftright {
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: #337AB7;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  transition: all .3s ease-in;
+}
+
+.cl-btn-2 .rightleft {
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: #337AB7;
+  border-radius: 2px;
+  transform: rotate(-45deg);
+  transition: all .3s ease-in;
+}
+
+.cl-btn-2 .close-btn {
+  margin: 54px 0 0 -5px;
+  position: absolute;
+  color: #337AB7;
+  font-family: Tahoma, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all .3s ease-in;
+  opacity: 0;
+}
+
+.cl-btn-2 div:hover .leftright {
+  transform: rotate(-45deg);
+  background-color: #000;
+}
+
+.cl-btn-2 div:hover .rightleft {
+  transform: rotate(45deg);
+  background-color: #000;
+}
+
+.cl-btn-2 div:hover .close-btn {
+  opacity: 1;
+}

@@ -13,3 +13,7 @@ en:
     show:
       photo: Add photo
       edit: Edit
+  layouts:
+    application:
+      title: Eve&Event
+      footer-info: Footer

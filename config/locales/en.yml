@@ -23,3 +23,14 @@ en:
     application:
       title: Eve&Event
       footer-info: Footer
+  devise:
+    passwords:
+      new:
+        forgot: Forgot your password?
+        reset: Reset password
+  users:
+    show:
+      edit: Edit
+      back: Back
+      create: Create event
+      text: User has not events!

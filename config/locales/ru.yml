@@ -75,6 +75,10 @@ ru:
         account: Личный аккаунт
         password: Пароль
         log-in: Войти
+    passwords:
+      new:
+        forgot: Забыли пароль?
+        reset: Сбросить пароль
   events:
     event:
       show: Просмотр
@@ -133,14 +137,14 @@ ru:
       subscribe: Подписаться
     subscription:
       confirm: Вы уверены?
-  "":
-    "":
-      "":
+  '':
+    '':
+      '':
         models:
           subscription:
             rb:
               exist: уже подсписан
-              taken: ""
+              taken: ''
   photos:
     form:
       send: Отправить

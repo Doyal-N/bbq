@@ -1,7 +1,7 @@
 h1.is-size-1.has-text-black.has-text-centered = @user.name
 .columns.is-centered
   figure.image.is-128x128
-    = image_tag url_for(@user.avatar), class: 'is-rounded'
+    = user_helper_avatar(@user)
 
 = link_to t('.edit'), edit_user_path(@user), class: 'button is-link is-light'
 = link_to t('.back'), events_path, class: 'button is-link is-light ml-2'

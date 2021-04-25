@@ -4,7 +4,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.2'
 
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
-gem 'draper'
 gem 'dotenv-rails'
 gem 'devise'
 gem 'pg', '~> 1.1'

@@ -10,6 +10,7 @@ gem 'pg', '~> 1.1'
 gem 'rails-i18n'
 gem 'puma', '~> 5.0'
 gem 'slim-rails'
+gem 'mailjet'
 gem 'webpacker', '~> 5.0'
 gem 'aws-sdk-s3', require: false
 

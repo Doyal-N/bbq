@@ -75,6 +75,7 @@ ru:
         account: Личный аккаунт
         password: Пароль
         log-in: Войти
+        forgot: Забыли пароль?
     passwords:
       new:
         forgot: Забыли пароль?

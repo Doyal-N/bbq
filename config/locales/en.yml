@@ -28,6 +28,9 @@ en:
       new:
         forgot: Forgot your password?
         reset: Reset password
+    sessions:
+      new:
+        forgot: Forgot your password?
   users:
     show:
       edit: Edit

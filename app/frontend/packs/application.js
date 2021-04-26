@@ -9,6 +9,7 @@ ActiveStorage.start()
 Rails.start()
 
 import 'packs/notification'
+import 'packs/map'
 import flatpickr from "flatpickr"
 
 document.addEventListener('DOMContentLoaded', () => {

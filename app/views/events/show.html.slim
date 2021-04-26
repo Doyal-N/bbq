@@ -12,11 +12,13 @@ h1.title.is-1.has-text-centered.is-uppercase.is-family-code.has-text-white= @eve
       p.is-size-5 = @event.description
       strong
         u= t('.place')
-      = link_to " #{@event.address}", "https://yandex.ru/maps/?text=#{@event.address}"
+      = content_tag('div', '', id: 'map', style: "width: 500px; height: 300px", data: { address: @event.address })
+
     - if current_user_can_edit?(@event)
       = link_to t('.edit'), edit_event_path(@event), class:'button is-link is-light mt-3'
       = link_to t('.delete'), event_path(@event), class: 'button is-danger has-text-black mt-3 ml-3', \
         method: :delete, data: { confirm: t('.sure') }
+
 
     p.title.mt-3= "#{t('.producer')} - #{@event.user.name}"
     article.panel.is-info

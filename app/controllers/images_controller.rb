@@ -33,7 +33,7 @@ class ImagesController < ApplicationController
   end
 
   def send_mail_to_event_subscribers(event, image)
-    emails = event.subscribers.pluck(:email) - image.user.email
+    emails = event.subscribers.pluck(:email) + event.user.email - image.user.email
 
     emails.each do |email|
       ImageMailer.added_image(event, image, email).deliver_later

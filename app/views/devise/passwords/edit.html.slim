@@ -1,4 +1,5 @@
-h2= t('.change')
+.column.is-half
+  h2.is-size-4.has-text-white= t('.change')
 
 = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
   = render 'shared/errors', resource: resource

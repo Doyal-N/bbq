@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 15 }
   validates :avatar, content_type: ['image/png', 'image/jpg', 'image/jpeg'],
-    dimension: { min: 100..100, max: 200..200 }
+    dimension: { width: { min: 100, max: 200 }, height: { min: 100, max: 200 } }
 
   after_commit :link_subscriptions, on: :create
 

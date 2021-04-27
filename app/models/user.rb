@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_many :images
 
   validates :name, presence: true, length: { maximum: 15 }
+  validates :avatar, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg'],
+    dimension: { min: 100..100, max: 200..200 }
 
   after_commit :link_subscriptions, on: :create
 

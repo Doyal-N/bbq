@@ -13,6 +13,8 @@ gem 'slim-rails'
 gem 'mailjet'
 gem 'webpacker', '~> 5.0'
 gem 'aws-sdk-s3', require: false
+gem 'active_storage_validations'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

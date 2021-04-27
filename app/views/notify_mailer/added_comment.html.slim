@@ -1,0 +1,14 @@
+p= @comment.body
+= t '.author'
+p= @comment.user_name
+
+hr
+
+= t '.event'
+h3= @event.title
+
+= t '.datetime'
+h4= l @event.datetime, format: :short
+
+= t '.owner'
+h4= @event.user.name

@@ -4,7 +4,7 @@ ru:
       messages:
         taken_email: уже существует в системе
         creator: не может стать подписчиком своего события
-        not_add: не может быть добавлен
+        not_member: не является участником события
     models:
       user: Пользователь
       event: Событие
@@ -33,6 +33,7 @@ ru:
       image:
         title: Название
         image: Файл
+        user: Пользователь
   controllers:
     events:
       created: Вы создали новое мероприятие
@@ -97,7 +98,7 @@ ru:
     new:
       title: Создать новое событие
     show:
-      place: 'Место встречи   '
+      place: "Место встречи   "
       edit: Редактировать
       sure: Вы уверены?
       delete: Удалить
@@ -138,14 +139,14 @@ ru:
       subscribe: Подписаться
     subscription:
       confirm: Вы уверены?
-  '':
-    '':
-      '':
+  "":
+    "":
+      "":
         models:
           subscription:
             rb:
               exist: уже подсписан
-              taken: ''
+              taken: ""
   photos:
     form:
       send: Отправить

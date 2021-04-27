@@ -7,6 +7,7 @@ class ImagesController < ApplicationController
 
     if @new_image.save
       redirect_to @event, notice: t('controllers.photos.created')
+      send_mail_to_event_subscribers(@event, @new_image)
     else
       render 'events/show', alert: t('controllers.photos.error')
     end
@@ -16,7 +17,7 @@ class ImagesController < ApplicationController
     @image = Image.find(params[:id])
     message = { notice: t('controllers.photos.destroyed') }
 
-    if current_user_can_edit?(@image)
+    if current_user.creator?(@image.event)
       @image.destroy
     else
       message = { alert: t('controllers.photos.error') }
@@ -29,5 +30,13 @@ class ImagesController < ApplicationController
 
   def image_params
     params.fetch(:image, {}).permit(:title, :image)
+  end
+
+  def send_mail_to_event_subscribers(event, image)
+    emails = event.subscribers.pluck(:email) - image.user.email
+
+    emails.each do |email|
+      ImageMailer.added_image(event, image, email).deliver_later
+    end
   end
 end

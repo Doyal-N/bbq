@@ -7,4 +7,8 @@ class Event < ApplicationRecord
 
   validates :title, :address, :datetime, presence: true
   validates :title, length: { maximum: 30 }
+
+  def user_is_member?(user)
+    subscribers.member?(user) || user.creator?(self)
+  end
 end

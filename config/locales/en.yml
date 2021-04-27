@@ -7,7 +7,7 @@ en:
     mailer:
       reset_password_instructions:
         ignore: If you didn't request this, please ignore this email.
-        hi: Hello %{name}
+        hi: Hello
         text: >-
           Someone has requested a link to change your password. You can do this
           through the link below

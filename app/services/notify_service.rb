@@ -1,6 +1,6 @@
 class NotifyService
   def self.send_mail_about_new_image(event, image)
-    emails = event.subscribers.pluck(:email) + event.user.email - image.user.email
+    emails = event.subscribers.pluck(:email) + [event.user.email] - [image.user.email]
 
     emails.each do |email|
       NotifyMailer.added_image(event, image, email).deliver_now
@@ -8,7 +8,7 @@ class NotifyService
   end
 
   def self.send_mail_about_new_comment(event, comment)
-    emails = event.subscribers.pluck(:email) + event.user.email - comment.user.email
+    emails = event.subscribers.pluck(:email) + [event.user.email] - [comment.user.email]
 
     emails.each do |email|
       NotifyMailer.added_comment(event, comment, email).deliver_now

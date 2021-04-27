@@ -8,7 +8,7 @@ class NotifyService
   end
 
   def self.send_mail_about_new_comment(event, comment)
-    emails = event.subscribers.pluck(:email) + [event.user.email] - [comment.user.email]
+    emails = event.subscribers.pluck(:email) + [event.user.email] - [comment.user&.email]
 
     emails.each do |email|
       NotifyMailer.added_comment(event, comment, email).deliver_now

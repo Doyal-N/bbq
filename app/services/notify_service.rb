@@ -1,17 +1,19 @@
-class NotifyService
-  def self.send_mail_about_new_image(event, image)
-    emails = event.subscribers.pluck(:email) + [event.user.email] - [image.user.email]
+module NotifyService
+  def send_mail_about_new_record(record)
+    emails = collect_emails(record)
 
     emails.each do |email|
-      NotifyMailer.added_image(event, image, email).deliver_now
+      case record
+      when Image then NotifyMailer.added_image(record, email).deliver_now
+      when Comment then NotifyMailer.added_comment(record, email).deliver_now
+      end
     end
   end
 
-  def self.send_mail_about_new_comment(event, comment)
-    emails = event.subscribers.pluck(:email) + [event.user.email] - [comment.user&.email]
+  private
 
-    emails.each do |email|
-      NotifyMailer.added_comment(event, comment, email).deliver_now
-    end
+  def collect_emails(record)
+    event = record.event
+    event.subscribers.pluck(:email) + [event.user.email] - [record.user&.email]
   end
 end

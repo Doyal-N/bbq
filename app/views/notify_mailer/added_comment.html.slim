@@ -12,3 +12,5 @@ h4= l @event.datetime, format: :short
 
 = t '.owner'
 h4= @event.user.name
+
+= link_to 'К событию', event_url(@event)

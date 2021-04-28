@@ -10,7 +10,7 @@ module NotifyService
     end
   end
 
-  def collect_emails(record)
+  def self.collect_emails(record)
     event = record.event
     event.subscribers.pluck(:email) + [event.user.email] - [record.user&.email]
   end

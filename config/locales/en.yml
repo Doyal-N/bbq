@@ -1,39 +1,17 @@
 en:
-  controllers:
-    photos:
-      created: Image added
-      error: Errors added
-      destroyed: Image destroyed!
-  images:
-    form:
-      send: Send
-    image:
-      sure: Are you sure?
-  events:
-    show:
-      photo: Add photo
-      edit: Edit
-      place: Venie
-      delete: Delete
-      sure: Are you sure?
-      producer: Producer
-      subscribe: Subscribe
-      comment: Add comment
-  layouts:
-    application:
-      title: Eve&Event
-      footer-info: Footer
+  comment_mailer:
+    added_comment:
+      datetime: Datetime
+      title: Title
   devise:
+    mailer:
+      reset_password_instructions:
+        ignore: If you didn't request this, please ignore this email.
+        hi: Hello
+        text: >-
+          Someone has requested a link to change your password. You can do this
+          through the link below
+        change: Change my password
     passwords:
-      new:
-        forgot: Forgot your password?
-        reset: Reset password
-    sessions:
-      new:
-        forgot: Forgot your password?
-  users:
-    show:
-      edit: Edit
-      back: Back
-      create: Create event
-      text: User has not events!
+      edit:
+        change: Change my password

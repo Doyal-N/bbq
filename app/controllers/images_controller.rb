@@ -7,7 +7,7 @@ class ImagesController < ApplicationController
 
     if @new_image.save
       redirect_to @event, notice: t('controllers.photos.created')
-      send_mail_to_event_subscribers(@event, @new_image)
+      NotifyService.send_mail_about_new_record(@new_image)
     else
       render 'events/show', alert: t('controllers.photos.error')
     end
@@ -29,14 +29,6 @@ class ImagesController < ApplicationController
   private
 
   def image_params
-    params.fetch(:image, {}).permit(:title, :image)
-  end
-
-  def send_mail_to_event_subscribers(event, image)
-    emails = event.subscribers.pluck(:email) + event.user.email - image.user.email
-
-    emails.each do |email|
-      ImageMailer.added_image(event, image, email).deliver_later
-    end
+    params.require(:image).permit(:title, :image)
   end
 end

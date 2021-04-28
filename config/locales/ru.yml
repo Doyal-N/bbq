@@ -17,6 +17,7 @@ ru:
         name: Имя
         password: Пароль
         password_confirmation: Подтверждение пароля
+        avatar: Аватар
       event:
         title: Название
         address: Место встречи
@@ -32,7 +33,7 @@ ru:
         user: Пользователь
       image:
         title: Название
-        image: Файл
+        image: Фото
         user: Пользователь
   controllers:
     events:
@@ -81,6 +82,18 @@ ru:
       new:
         forgot: Забыли пароль?
         reset: Сбросить пароль
+      edit:
+        change: ' Сменить пароль'
+        repeat_password: Повторите пароль
+        password: Введите новый пароль
+    mailer:
+      reset_password_instructions:
+        ignore: Если не запрашивали смену пароля, проигнорируйте письмо!
+        hi: 'Привет '
+        text: >-
+          Кто-то запросил ссылку на смену пароля. Вы можете сделать это пройдя
+          по ссылке ниже.
+        change: Изменить пароль
   events:
     event:
       show: Просмотр
@@ -98,7 +111,7 @@ ru:
     new:
       title: Создать новое событие
     show:
-      place: "Место встречи   "
+      place: Место встречи
       edit: Редактировать
       sure: Вы уверены?
       delete: Удалить
@@ -139,14 +152,6 @@ ru:
       subscribe: Подписаться
     subscription:
       confirm: Вы уверены?
-  "":
-    "":
-      "":
-        models:
-          subscription:
-            rb:
-              exist: уже подсписан
-              taken: ""
   photos:
     form:
       send: Отправить
@@ -155,3 +160,15 @@ ru:
       send: Отправить
     image:
       sure: Вы уверены?
+  notify_mailer:
+    added_image:
+      subject: На событие %{event} добавлено изображение
+      add: Картинку добавил
+      text: Добавлено изображение
+    added_comment:
+      subject: На событие %{event} добавлен комментарий
+      title: Название
+      author: Автор
+      event: Событие
+      datetime: Дата и время
+      owner: Создатель события

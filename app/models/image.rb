@@ -5,7 +5,7 @@ class Image < ApplicationRecord
   validates :title, :image, presence: true
   validate :user_is_event_member
   validates :image, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg'],
-    dimension: { width: { min: 300, max: 500 }, height: { min: 300, max: 500 } }
+    dimension: { width: { min: 200, max: 1200 }, height: { min: 200, max: 800 } }
 
   has_one_attached :image
 

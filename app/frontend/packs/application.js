@@ -21,4 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     minDate: "today",
   });
 
+  lightbox.option({
+    'resizeDuration': 200,
+    'wrapAround': true
+  })
 })

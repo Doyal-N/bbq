@@ -68,9 +68,9 @@ $text_white: white;
 
 .cl-btn-2 .leftright {
   height: 4px;
-  width: 50px;
+  width: 20px;
   position: absolute;
-  margin-top: 24px;
+  margin-top: 42px;
   background-color: #337AB7;
   border-radius: 2px;
   transform: rotate(45deg);
@@ -79,9 +79,9 @@ $text_white: white;
 
 .cl-btn-2 .rightleft {
   height: 4px;
-  width: 50px;
+  width: 20px;
   position: absolute;
-  margin-top: 24px;
+  margin-top: 42px;
   background-color: #337AB7;
   border-radius: 2px;
   transform: rotate(-45deg);
@@ -112,4 +112,15 @@ $text_white: white;
 
 .cl-btn-2 div:hover .close-btn {
   opacity: 1;
+}
+
+.gallery img {
+  transition: 1s;
+  width: 140px;
+  height: 80px;
+}
+
+.gallery img:hover {
+  filter: grayscale(100%);
+  transform: scale(1.1);
 }

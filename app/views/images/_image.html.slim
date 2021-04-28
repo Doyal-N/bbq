@@ -1,9 +1,10 @@
 - if image.image.attached?
-  figure.mb-4.image.is-256x256
+  figure.mb-4.image.is-128x128.ml-3
     - if current_user_can_edit?(image)
       = link_to image_path(image), method: :delete, data: { confirm: t('.sure') }
         .cl-btn-2
           .
             .leftright
             .rightleft
-    = image_tag(url_for(image.image))
+    a href="#{url_for(image.image)}" data-lightbox='event-images'
+      = image_tag(url_for(image.image))

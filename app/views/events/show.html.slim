@@ -31,7 +31,9 @@ h1.title.is-1.has-text-centered.is-uppercase.is-family-code.has-text-white= @eve
       = render partial: 'images/form', locals: { image: @new_image || @event.images.build }
 
   .column.is-half
-    = render partial: 'images/image', collection: @event.images.except(@new_image)
-    = render partial: 'comments/comment', collection: @event.comments.except(@new_comment)
-    p.is-size-4.has-text-dark.has-background-info= t('.comment')
-    = render partial: 'comments/form', locals: { comment: @new_comment || @event.comments.build }
+    .column.gallery.is-flex.is-flex-wrap-wrap
+      = render partial: 'images/image', collection: @event.images.except(@new_image)
+    .column
+      = render partial: 'comments/comment', collection: @event.comments.except(@new_comment)
+      p.is-size-4.has-text-dark.has-background-info= t('.comment')
+      = render partial: 'comments/form', locals: { comment: @new_comment || @event.comments.build }

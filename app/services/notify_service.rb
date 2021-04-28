@@ -1,5 +1,5 @@
 module NotifyService
-  def send_mail_about_new_record(record)
+  def self.send_mail_about_new_record(record)
     emails = collect_emails(record)
 
     emails.each do |email|
@@ -9,8 +9,6 @@ module NotifyService
       end
     end
   end
-
-  private
 
   def collect_emails(record)
     event = record.event

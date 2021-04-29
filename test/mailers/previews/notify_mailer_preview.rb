@@ -1,6 +1,6 @@
 class NotifyMailerPreview < ActionMailer::Preview
   def added_image
-    NotifyMailer.added_image(Image.find(8), 'test@mail.ru')
+    NotifyMailer.added_image(Image.first, 'test@mail.ru')
   end
 
   def added_comment

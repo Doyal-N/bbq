@@ -4,7 +4,7 @@ ru:
       messages:
         taken_email: уже существует в системе
         creator: не может стать подписчиком своего события
-        not_add: не может быть добавлен
+        not_member: не является участником события
     models:
       user: Пользователь
       event: Событие
@@ -17,6 +17,7 @@ ru:
         name: Имя
         password: Пароль
         password_confirmation: Подтверждение пароля
+        avatar: Аватар
       event:
         title: Название
         address: Место встречи
@@ -32,7 +33,8 @@ ru:
         user: Пользователь
       image:
         title: Название
-        image: Файл
+        image: Фото
+        user: Пользователь
   controllers:
     events:
       created: Вы создали новое мероприятие
@@ -75,6 +77,23 @@ ru:
         account: Личный аккаунт
         password: Пароль
         log-in: Войти
+        forgot: Забыли пароль?
+    passwords:
+      new:
+        forgot: Забыли пароль?
+        reset: Сбросить пароль
+      edit:
+        change: ' Сменить пароль'
+        repeat_password: Повторите пароль
+        password: Введите новый пароль
+    mailer:
+      reset_password_instructions:
+        ignore: Если не запрашивали смену пароля, проигнорируйте письмо!
+        hi: 'Привет '
+        text: >-
+          Кто-то запросил ссылку на смену пароля. Вы можете сделать это пройдя
+          по ссылке ниже.
+        change: Изменить пароль
   events:
     event:
       show: Просмотр
@@ -133,14 +152,6 @@ ru:
       subscribe: Подписаться
     subscription:
       confirm: Вы уверены?
-  "":
-    "":
-      "":
-        models:
-          subscription:
-            rb:
-              exist: уже подсписан
-              taken: ""
   photos:
     form:
       send: Отправить
@@ -149,3 +160,15 @@ ru:
       send: Отправить
     image:
       sure: Вы уверены?
+  notify_mailer:
+    added_image:
+      subject: На событие %{event} добавлено изображение
+      add: Картинку добавил
+      text: Добавлено изображение
+    added_comment:
+      subject: На событие %{event} добавлен комментарий
+      title: Название
+      author: Автор
+      event: Событие
+      datetime: Дата и время
+      owner: Создатель события

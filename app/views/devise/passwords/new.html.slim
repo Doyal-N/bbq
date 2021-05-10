@@ -1,0 +1,15 @@
+.column.is-half
+  h2.is-size-4.has-text-white= t('.forgot')
+
+  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+    = render 'shared/errors', resource: resource
+
+    .field
+      = f.label :email, class: 'label has-text-black'
+      .control.has-icons-left
+        = f.text_field :email, class: 'input'
+        span.icon.is-small.is-left
+          i.fas.fa-envelope
+
+    .actions
+      = f.submit t('.reset'), class: 'button is-link'

@@ -8,6 +8,7 @@ html style=("background-image: url(#{asset_pack_path('media/images/sky.jpg')})")
     = csp_meta_tag
 
     = stylesheet_pack_tag 'application', media: 'all'
+    = javascript_include_tag "https://api-maps.yandex.ru/2.1/?apikey=#{ENV['API_MAP']}&lang=ru_RU"
     = javascript_pack_tag 'application'
 
   body

@@ -1,0 +1,7 @@
+h3= "#{t('.add')} #{@user.name}"
+p= t('.text')
+hr
+.
+  = image_tag @image.variant(resize_to_limit: [100, 60])
+br
+= link_to 'К событию', event_url(@event)

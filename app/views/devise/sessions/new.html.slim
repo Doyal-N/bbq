@@ -26,3 +26,5 @@
 
       .actions
         = f.submit t('.log-in'), class: 'button is-link'
+
+      p.mt-2= link_to t('.forgot'), new_password_path(resource_name), class: 'has-text-white'

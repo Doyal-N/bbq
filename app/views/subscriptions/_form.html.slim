@@ -12,6 +12,6 @@
       .control
         = f.text_field :user_name, class: 'input is-primary'
 
-  -unless @event.user == current_user
+  -unless @event.user_is_member?(current_user)
     .actions
       = f.submit t('.subscribe'), class: 'button is-link mt-5'

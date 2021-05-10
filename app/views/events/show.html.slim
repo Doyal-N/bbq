@@ -12,11 +12,13 @@ h1.title.is-1.has-text-centered.is-uppercase.is-family-code.has-text-white= @eve
       p.is-size-5 = @event.description
       strong
         u= t('.place')
-      = link_to " #{@event.address}", "https://yandex.ru/maps/?text=#{@event.address}"
+      = content_tag('div', '', id: 'map', style: "width: 500px; height: 300px", data: { address: @event.address })
+
     - if current_user_can_edit?(@event)
       = link_to t('.edit'), edit_event_path(@event), class:'button is-link is-light mt-3'
       = link_to t('.delete'), event_path(@event), class: 'button is-danger has-text-black mt-3 ml-3', \
         method: :delete, data: { confirm: t('.sure') }
+
 
     p.title.mt-3= "#{t('.producer')} - #{@event.user.name}"
     article.panel.is-info
@@ -24,12 +26,14 @@ h1.title.is-1.has-text-centered.is-uppercase.is-family-code.has-text-white= @eve
     = render partial: 'subscriptions/subscription', collection: @event.subscriptions.except(@new_subscription)
     .mt-6= render partial: 'subscriptions/form', locals: { subscription: @new_subscription || @event.subscriptions.build }
 
-    - if current_user_can_edit?(@event)
+    - if @event.user_is_member?(current_user)
       h2.is-size-4.mb-3.mt-6= t('.photo')
       = render partial: 'images/form', locals: { image: @new_image || @event.images.build }
 
   .column.is-half
-    = render partial: 'images/image', collection: @event.images.except(@new_image)
-    = render partial: 'comments/comment', collection: @event.comments.except(@new_comment)
-    p.is-size-4.has-text-dark.has-background-info= t('.comment')
-    = render partial: 'comments/form', locals: { comment: @new_comment || @event.comments.build }
+    .column.gallery.is-flex.is-flex-wrap-wrap
+      = render partial: 'images/image', collection: @event.images.with_attached_image
+    .column
+      = render partial: 'comments/comment', collection: @event.comments.except(@new_comment)
+      p.is-size-4.has-text-dark.has-background-info= t('.comment')
+      = render partial: 'comments/form', locals: { comment: @new_comment || @event.comments.build }

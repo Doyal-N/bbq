@@ -13,7 +13,7 @@ class SubscriptionsController < ApplicationController
 
   def destroy
     @subscription = Subscription.find(params[:id])
-    message = { notice: t('controllers.subscriptions.destroyed')}
+    message = { notice: t('controllers.subscriptions.destroyed') }
 
     if current_user_can_edit?(@subscription)
       @subscription.destroy!

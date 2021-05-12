@@ -6,9 +6,9 @@ ru:
         taken_email: уже существует в системе
         creator: не может стать подписчиком своего события
         not_member: не является участником события
-        dimension_width_inclusion: "ширина изображения должна быть между %{min} и %{max} пикселей."
-        dimension_height_inclusion: "высота изображения должна быть между %{min} и %{max} пикселей."
-        image_metadata_missing: Изображение не проходит валидацию
+        dimension_width_inclusion: ширина изображения должна быть между %{min} и %{max} пикселей.
+        dimension_height_inclusion: высота изображения должна быть между %{min} и %{max} пикселей.
+        image_metadata_missing: не проходит валидацию
     models:
       user: Пользователь
       event: Событие

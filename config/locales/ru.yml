@@ -1,13 +1,5 @@
 ru:
   activerecord:
-    errors:
-      messages:
-        content_type_invalid: Допустимые форматы - jpg, jpeg, png
-        taken_email: уже существует в системе
-        creator: не может стать подписчиком своего события
-        not_member: не является участником события
-        dimension_width_inclusion: ширина должна быть между %{min} и %{max} пикселей.
-        dimension_height_inclusion: высота должна быть между %{min} и %{max} пикселей.
     models:
       user: Пользователь
       event: Событие
@@ -175,3 +167,11 @@ ru:
       event: Событие
       datetime: Дата и время
       owner: Создатель события
+  errors:
+    messages:
+      content_type_invalid: Допустимые форматы - jpg, jpeg, png
+      taken_email: уже существует в системе
+      creator: не может стать подписчиком своего события
+      not_member: не является участником события
+      dimension_width_inclusion: ширина должна быть между %{min} и %{max} пикселей.
+      dimension_height_inclusion: высота должна быть между %{min} и %{max} пикселей.

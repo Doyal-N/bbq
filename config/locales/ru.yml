@@ -2,9 +2,13 @@ ru:
   activerecord:
     errors:
       messages:
+        content_type_invalid: Загрузите картинку формата - jpg, jpeg, png
         taken_email: уже существует в системе
         creator: не может стать подписчиком своего события
         not_member: не является участником события
+        dimension_width_inclusion: "ширина изображения должна быть между %{min} и %{max} пикселей."
+        dimension_height_inclusion: "высота изображения должна быть между %{min} и %{max} пикселей."
+        image_metadata_missing: Изображение не проходит валидацию
     models:
       user: Пользователь
       event: Событие
@@ -83,13 +87,13 @@ ru:
         forgot: Забыли пароль?
         reset: Сбросить пароль
       edit:
-        change: ' Сменить пароль'
+        change: " Сменить пароль"
         repeat_password: Повторите пароль
         password: Введите новый пароль
     mailer:
       reset_password_instructions:
         ignore: Если не запрашивали смену пароля, проигнорируйте письмо!
-        hi: 'Привет '
+        hi: "Привет "
         text: >-
           Кто-то запросил ссылку на смену пароля. Вы можете сделать это пройдя
           по ссылке ниже.

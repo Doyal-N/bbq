@@ -1,11 +1,9 @@
 lock '~> 3.16.0'
 
 set :application, 'bbq'
+set :branch, 'main'
 set :repo_url, 'git@github.com:Doyal-N/bbq.git'
 set :deploy_user, 'deploy'
-
-# Default branch is :master
-# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 set :deploy_to, '/home/deploy/www/'
 append :linked_files, 'config/master.key', 'config/database.yml'

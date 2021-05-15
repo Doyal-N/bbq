@@ -8,16 +8,16 @@ gem 'dotenv-rails'
 gem 'devise'
 gem 'pg', '~> 1.1'
 gem 'rails-i18n'
-gem 'puma', '~> 5.0'
 gem 'slim-rails'
 gem 'mailjet'
 gem 'webpacker', '~> 5.0'
-gem 'aws-sdk-s3', require: false
+gem 'aws-sdk-s3'
 gem 'active_storage_validations'
 gem 'mini_magick'
 gem 'image_processing'
 
 group :development, :test do
+  gem 'puma', '~> 5.0'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 

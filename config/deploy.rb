@@ -3,12 +3,13 @@ lock '~> 3.16.0'
 set :application, 'fin-catalog.ru'
 set :repo_url, 'git@github.com:Doyal-N/bbq.git'
 set :deploy_user, 'deploy'
+set :rbenv_ruby, '2.7.2'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 set :deploy_to, '/home/deploy/www/'
-append :linked_files, 'config/master.key'
+append :linked_files, 'config/master.key', 'config/database.yml'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system', 'storage'
 
 set :keep_releases, 2

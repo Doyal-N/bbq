@@ -23,4 +23,8 @@ end
 
 group :development do
   gem 'rubocop-rails', require: false
+  gem 'capistrano', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-rbenv', require: false
+  gem 'capistrano-bundler', require: false
 end

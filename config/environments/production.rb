@@ -49,7 +49,7 @@ Rails.application.configure do
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
 
-  config.require_master_key = true
+  config.require_master_key =  false
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
@@ -76,7 +76,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.active_storage.service = :local
+  config.active_storage.service = :amazon
 
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_deliveries = true

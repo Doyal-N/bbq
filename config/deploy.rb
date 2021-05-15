@@ -1,28 +1,21 @@
 lock '~> 3.16.0'
 
 set :application, 'bbq'
+set :branch, 'main'
 set :repo_url, 'git@github.com:Doyal-N/bbq.git'
 set :deploy_user, 'deploy'
 
-# Default branch is :master
-# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
-
 set :deploy_to, '/home/deploy/www/'
-append :linked_files, 'config/master.key', 'config/database.yml'
+append :linked_files, 'config/database.yml', 'config/master.key'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system', 'storage'
+
+set :assets_roles, :webpack
+set :assets_prefix, 'packs'
+set :assets_manifests, -> { [release_path.join('public', fetch(:assets_prefix), 'manifest.json*')] }
 
 set :keep_releases, 2
 
-namespace :deploy do
-  desc 'Restart app'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      execute :touch, release_path.join('tmp/restart.txt')
-    end
-  end
-end
-
-after 'deploy:publishing', :restart
+after 'deploy:publishing', 'deploy:restart'
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh

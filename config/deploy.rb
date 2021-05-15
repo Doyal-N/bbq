@@ -11,7 +11,6 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/syst
 
 set :assets_roles, :webpack
 set :assets_prefix, 'packs'
-set :assets_manifests, -> { [release_path.join('public', fetch(:assets_prefix), 'manifest.json*')] }
 
 set :keep_releases, 2
 

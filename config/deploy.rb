@@ -6,7 +6,7 @@ set :repo_url, 'git@github.com:Doyal-N/bbq.git'
 set :deploy_user, 'deploy'
 
 set :deploy_to, '/home/deploy/www/'
-append :linked_files, 'config/master.key', 'config/database.yml'
+append :linked_files, 'config/database.yml'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system', 'storage'
 
 set :assets_roles, :webpack

@@ -8,7 +8,7 @@ set :deploy_user, 'deploy'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 set :deploy_to, '/home/deploy/www/'
-append :linked_files, 'config/master.key'
+append :linked_files, 'config/master.key', 'config/database.yml'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system', 'storage'
 
 set :keep_releases, 2

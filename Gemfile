@@ -18,7 +18,6 @@ gem 'image_processing'
 
 group :development, :test do
   gem 'puma', '~> 5.0'
-  gem 'dotenv-rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 

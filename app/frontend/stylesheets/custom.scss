@@ -124,3 +124,9 @@ $text_white: white;
   filter: grayscale(100%);
   transform: scale(1.1);
 }
+
+@media screen and (max-width: 590px) {
+  .ymaps-2-1-78-events-pane {
+    max-width: 400px;
+  }
+}

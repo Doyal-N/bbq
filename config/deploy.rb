@@ -1,6 +1,6 @@
 lock '~> 3.16.0'
 
-set :application, 'bbq'
+set :application, 'myapp'
 set :branch, 'main'
 set :repo_url, 'git@github.com:Doyal-N/bbq.git'
 set :deploy_user, 'deploy'

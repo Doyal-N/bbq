@@ -14,6 +14,20 @@ set :assets_prefix, 'packs'
 
 set :keep_releases, 2
 
+before "deploy:assets:precompile", "deploy:yarn_install"
+after 'deploy:updated', 'webpacker:precompile'
+
+namespace :deploy do
+  desc 'Run rake yarn:install'
+  task :yarn_install do
+    on roles(:web) do
+      within release_path do
+        execute("cd #{release_path} && yarn install")
+      end
+    end
+  end
+end
+
 after 'deploy:publishing', 'deploy:restart'
 
 # Default value for :format is :airbrussh.

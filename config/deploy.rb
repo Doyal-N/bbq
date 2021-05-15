@@ -1,17 +1,16 @@
 lock '~> 3.16.0'
 
-set :application, 'bbq'
+set :application, 'myapp'
 set :branch, 'main'
 set :repo_url, 'git@github.com:Doyal-N/bbq.git'
 set :deploy_user, 'deploy'
 
 set :deploy_to, '/home/deploy/www/'
-append :linked_files, 'config/database.yml', 'config/master.key'
+append :linked_files, 'config/database.yml', 'config/secrets.yml', 'config/application.yml'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system', 'storage'
 
 set :assets_roles, :webpack
 set :assets_prefix, 'packs'
-set :assets_manifests, -> { [release_path.join('public', fetch(:assets_prefix), 'manifest.json*')] }
 
 set :keep_releases, 2
 

@@ -6,8 +6,6 @@ require "capistrano/deploy"
 require "capistrano/rbenv"
 require "capistrano/bundler"
 require "capistrano/rails"
-require 'capistrano/rails/assets'
-require "capistrano/webpacker/precompile"
 
 # Load the SCM plugin appropriate to your project:
 #

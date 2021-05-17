@@ -19,7 +19,7 @@ class EventsController < ApplicationController
   end
 
   def edit
-    authorize @event
+    authorize @event, :destroy?
   end
 
   def create
@@ -33,7 +33,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    authorize @event
+    authorize @event, :destroy?
 
     if @event.update(event_params)
       redirect_to @event, notice: t('controllers.events.updated')

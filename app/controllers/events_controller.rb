@@ -61,7 +61,7 @@ class EventsController < ApplicationController
 
     pincode = cookies.permanent["event_#{@event.id}_pincode"]
 
-    unless @event.pincode_valid?(pincode)
+    unless @event.true_pincode?(pincode)
       if input_pin.present?
         flash.now[:alert] = t('controllers.events.wrong_pincode')
       end

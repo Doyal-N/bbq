@@ -1,27 +1,30 @@
 require 'rails_helper'
 
 RSpec.describe EventPolicy, type: :policy do
-  let(:user) { User.new }
+  let(:user) { create(:user) }
+  let(:other_user) { create(:user) }
+  let(:event) { create(:event, user: user) }
+  let(:event_w_pincode) { create(:event, user: user, pincode: '222') }
 
   subject { described_class }
 
-  permissions ".scope" do
-    pending "add some examples to (or delete) #{__FILE__}"
+  context 'when user owner' do
+    permissions :destroy? do
+      it { is_expected.to permit(user, event) }
+    end
+
+    permissions :show? do
+      it { is_expected.to permit(user, event_w_pincode) }
+    end
   end
 
-  permissions :show? do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
+  context 'when user not an owner' do
+    permissions :destroy? do
+      it { is_expected.not_to permit(other_user, event) }
+    end
 
-  permissions :create? do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
-
-  permissions :update? do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
-
-  permissions :destroy? do
-    pending "add some examples to (or delete) #{__FILE__}"
+    permissions :show? do
+      it { is_expected.not_to permit(other_user, event_w_pincode) }
+    end
   end
 end

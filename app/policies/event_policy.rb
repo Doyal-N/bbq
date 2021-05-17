@@ -1,18 +1,10 @@
 class EventPolicy < ApplicationPolicy
-  def edit?
-    destroy?
-  end
-
-  def update?
-    destroy?
-  end
-
   def destroy?
     record.user == user
   end
 
   def show?
-    record.pincode.blank? || record.user == user
+    record.pincode.blank? || user == record.user
   end
 
   class Scope < Scope

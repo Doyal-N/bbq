@@ -2,13 +2,14 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index]
   before_action :set_event, except: %i[index]
   before_action :password_guard!, only: [:show]
-  after_action :verify_authorized, only: [:edit, :update, :destroy]
+  after_action :verify_authorized, only: %i[edit update destroy show]
 
   def index
     @events = Event.all
   end
 
   def show
+    authorize @event
     @new_comment = @event.comments.build(params[:comment])
     @new_subscription = @event.subscriptions.build(params[:subscription])
   end
@@ -50,12 +51,9 @@ class EventsController < ApplicationController
   private
 
   def password_guard!
-    return true if @event.pincode.blank?
-    return true if signed_in? && current_user == @event.user
-
     input_pin = params[:pincode]
 
-    if input_pin.present? && @event.true_pincode?(input_pin)
+    if @event.true_pincode?(input_pin)
       cookies.permanent["event_#{@event.id}_pincode"] = input_pin
     end
 

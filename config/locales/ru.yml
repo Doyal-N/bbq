@@ -80,13 +80,13 @@ ru:
         forgot: Забыли пароль?
         reset: Сбросить пароль
       edit:
-        change: " Сменить пароль"
+        change: ' Сменить пароль'
         repeat_password: Повторите пароль
         password: Введите новый пароль
     mailer:
       reset_password_instructions:
         ignore: Если не запрашивали смену пароля, проигнорируйте письмо!
-        hi: "Привет "
+        hi: 'Привет '
         text: >-
           Кто-то запросил ссылку на смену пароля. Вы можете сделать это пройдя
           по ссылке ниже.
@@ -181,3 +181,5 @@ ru:
       not_member: не является участником события
       dimension_width_inclusion: ширина должна быть между %{min} и %{max} пикселей.
       dimension_height_inclusion: высота должна быть между %{min} и %{max} пикселей.
+  pundit:
+    not_authorized: Приватное событие! Доступ по коду.

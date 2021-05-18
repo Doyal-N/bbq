@@ -4,8 +4,8 @@ module NotifyService
 
     emails.each do |email|
       case record
-      when Image then NotifyMailer.added_image(record, email).deliver_now
-      when Comment then NotifyMailer.added_comment(record, email).deliver_now
+      when Image then NotifyMailer.added_image(record, email).deliver_later
+      when Comment then NotifyMailer.added_comment(record, email).deliver_later
       end
     end
   end

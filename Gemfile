@@ -8,6 +8,7 @@ gem 'figaro'
 gem 'devise'
 gem 'pg', '~> 1.1'
 gem 'rails-i18n'
+gem 'resque'
 gem 'slim-rails'
 gem 'mailjet'
 gem 'webpacker', '~> 5.0'
@@ -27,4 +28,5 @@ group :development do
   gem 'capistrano-rails', require: false
   gem 'capistrano-rbenv', require: false
   gem 'capistrano-bundler', require: false
+  gem 'capistrano-resque', require: false
 end

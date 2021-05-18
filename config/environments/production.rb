@@ -13,7 +13,7 @@ Rails.application.configure do
   config.eager_load = true
 
   config.active_job.queue_adapter = :resque
-  config.active_job.queue_name_prefix = 'bbq'
+  config.active_job.queue_name_prefix = "myapp_#{Rails.env}"
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false

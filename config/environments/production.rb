@@ -13,7 +13,7 @@ Rails.application.configure do
   config.eager_load = true
 
   config.active_job.queue_adapter = :resque
-  config.active_job.queue_name_prefix = 'bbq'
+  config.active_job.queue_name_prefix = "myapp_#{Rails.env}"
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
@@ -46,7 +46,6 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
-
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).

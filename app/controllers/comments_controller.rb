@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
 
     if @new_comment.save
       redirect_to @event, notice: t('controllers.comments.created')
-      NotifyJob.perform_later(@new_comment)
+      NotifyJob.perform_later(@new_comment.id)
     else
       render 'events/show', alert: t('controllers.comments.error')
     end

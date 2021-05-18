@@ -7,7 +7,7 @@ class ImagesController < ApplicationController
 
     if @new_image.save
       redirect_to @event, notice: t('controllers.photos.created')
-      NotifyJob.perform_later(@new_image.id)
+      NotifyJob.perform_later(@new_image)
     else
       render 'events/show', alert: t('controllers.photos.error')
     end

@@ -5,8 +5,8 @@ class CommentsController < ApplicationController
     @new_comment.user = current_user
 
     if @new_comment.save
+      NotifyService.send_mail_about_new_record(@new_comment).deliver_later
       redirect_to @event, notice: t('controllers.comments.created')
-      NotifyMailer.added_comment('привет', 'zhuravoolev@yandex.ru').deliver_later
     else
       render 'events/show', alert: t('controllers.comments.error')
     end

@@ -6,7 +6,7 @@ class ImagesController < ApplicationController
     @new_image.user = current_user
 
     if @new_image.save
-      NotifyService.send_mail_about_new_record(@new_image).deliver_later
+      NotifyService.send_mail_about_new_record(@new_image)
       redirect_to @event, notice: t('controllers.photos.created')
     else
       render 'events/show', alert: t('controllers.photos.error')

@@ -57,7 +57,7 @@ class EventsController < ApplicationController
       cookies.permanent["event_#{@event.id}_pincode"] = input_pin
     end
 
-    pincode = cookies.permanent["event_#{@event.id}_pincode"]
+    pincode = cookies["event_#{@event.id}_pincode"]
 
     unless @event.true_pincode?(pincode)
       if input_pin.present?

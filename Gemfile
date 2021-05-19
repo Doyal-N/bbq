@@ -8,7 +8,7 @@ gem 'figaro'
 gem 'devise'
 gem 'pg', '~> 1.1'
 gem 'rails-i18n'
-gem 'sidekiq', '~>6.0.0'
+gem 'resque'
 gem 'slim-rails'
 gem 'mailjet'
 gem 'webpacker', '~> 5.0'
@@ -23,10 +23,11 @@ group :development, :test do
 end
 
 group :development do
+  gem 'letter_opener'
   gem 'rubocop-rails', require: false
   gem 'capistrano', require: false
   gem 'capistrano-rails', require: false
   gem 'capistrano-rbenv', require: false
   gem 'capistrano-bundler', require: false
-  gem 'capistrano-sidekiq', require: false
+  gem 'capistrano-resque', require: false
 end

@@ -9,6 +9,9 @@
 
 server 'fin-catalog.ru', user: 'deploy', roles: %w[app db web]
 
+set :resque_environment_task, true
+set :workers, { "#{fetch(:application)}*" => 1 }
+
 # role-based syntax
 # ==================
 

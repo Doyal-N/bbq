@@ -12,7 +12,7 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
-  config.active_job.queue_adapter = :sidekiq
+  config.active_job.queue_adapter = :resque
   config.active_job.queue_name_prefix = "myapp_#{Rails.env}"
 
   # Full error reports are disabled and caching is turned on.

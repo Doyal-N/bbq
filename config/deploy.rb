@@ -15,7 +15,7 @@ set :assets_prefix, 'packs'
 set :keep_releases, 2
 
 after 'deploy:publishing', 'deploy:restart'
-after 'deploy:restart', 'resque:restart'
+after 'deploy:restart', 'sidekiq:restart'
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh

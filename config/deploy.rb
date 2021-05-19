@@ -9,9 +9,6 @@ set :deploy_to, '/home/deploy/www/'
 append :linked_files, 'config/database.yml', 'config/secrets.yml', 'config/application.yml'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system', 'storage'
 
-set :init_system, :systemd
-set :service_unit_name, "sidekiq.service"
-
 set :assets_roles, :webpack
 set :assets_prefix, 'packs'
 

@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "coin20@protonmail.com"
+  default from: "<%= ENV['MY_MAIL'] %>"
   layout 'mailer'
 end

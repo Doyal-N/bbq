@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   after_action :verify_authorized, only: %i[edit update destroy show]
 
   def index
-    @events = Event.all
+    @events = policy_scope(Event)
   end
 
   def show
@@ -16,14 +16,16 @@ class EventsController < ApplicationController
 
   def new
     @event = current_user.events.build
+    authorize @event
   end
 
   def edit
-    authorize @event, :destroy?
+    authorize @event
   end
 
   def create
     @event = current_user.events.build(event_params)
+    authorize @event
 
     if @event.save
       redirect_to @event, notice: t('controllers.events.created')
@@ -33,7 +35,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    authorize @event, :destroy?
+    authorize @event
 
     if @event.update(event_params)
       redirect_to @event, notice: t('controllers.events.updated')

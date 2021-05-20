@@ -1,5 +1,4 @@
 class EventPolicy < ApplicationPolicy
-
   def new?
     user.present?
   end

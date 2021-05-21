@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Others available are: :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable,
+         :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook]
 
   has_one_attached :avatar
   has_many :events, dependent: :destroy

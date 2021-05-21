@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root "events#index"
-  devise_for :users, path_names: { sign_in: :login, sign_out: :logout  }
+  devise_for :users, path_names: { sign_in: :login, sign_out: :logout  },
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :events, shallow: true do
     resources :comments, only: [:create, :destroy]

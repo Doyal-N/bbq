@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Others available are: :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable,
+         :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook]
 
   has_one_attached :avatar
   has_many :events, dependent: :destroy
@@ -17,6 +17,22 @@ class User < ApplicationRecord
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
+  end
+
+  def self.find_for_facebook_oauth(access_token)
+    email = access_token.info.email
+    user = find_by(email: email)
+
+    return user if user.present?
+
+    provider = access_token.provider
+    id = access_token.extra.raw_info.id
+    url = "https://facebook.com/#{id}"
+
+    where(url: url, provider: provider).first_or_create! do |user|
+      user.email = email
+      user.password = Devise.friendly_token.first(16)
+    end
   end
 
   def creator?(model)

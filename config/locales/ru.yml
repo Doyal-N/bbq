@@ -67,6 +67,7 @@ ru:
         password: Пароль
         repeat_password: Повторите пароль
         sign-up: Зарегистрироваться
+        provider: Войти через FB
     sessions:
       new:
         account: Личный аккаунт
@@ -78,13 +79,13 @@ ru:
         forgot: Забыли пароль?
         reset: Сбросить пароль
       edit:
-        change: " Сменить пароль"
+        change: ' Сменить пароль'
         repeat_password: Повторите пароль
         password: Введите новый пароль
     mailer:
       reset_password_instructions:
         ignore: Если не запрашивали смену пароля, проигнорируйте письмо!
-        hi: "Привет "
+        hi: 'Привет '
         text: >-
           Кто-то запросил ссылку на смену пароля. Вы можете сделать это пройдя
           по ссылке ниже.

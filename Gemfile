@@ -8,6 +8,7 @@ gem 'figaro'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem "omniauth-rails_csrf_protection"
 gem 'pg', '~> 1.1'
 gem 'rails-i18n'
 gem 'resque'

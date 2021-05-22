@@ -18,18 +18,18 @@ class User < ApplicationRecord
     devise_mailer.send(notification, self, *args).deliver_later
   end
 
-  def self.find_for_facebook_oauth(access_token)
-    email = access_token.info.email
-    user = find_by(email: email)
+  def self.find_for_facebook_oauth(auth)
+    user = where(email: auth.info.email).first
 
     return user if user.present?
 
-    provider = access_token.provider
-    id = access_token.extra.raw_info.id
+    provider = auth.provider
+    id = auth.extra.raw_info.id
     url = "https://facebook.com/#{id}"
 
     where(url: url, provider: provider).first_or_create! do |user|
       user.email = email
+      user.name = auth.info.name
       user.password = Devise.friendly_token.first(16)
     end
   end

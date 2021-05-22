@@ -8,6 +8,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     else
       set_flash_message(:error, :failure, kind: 'Facebook',
         reason: 'authentication error') if is_navigational_format?
+
         redirect_to new_user_registration_url
     end
   end

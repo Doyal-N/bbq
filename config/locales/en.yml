@@ -39,3 +39,4 @@ en:
     registrations:
       new:
         provider: Sign in with FB
+        provider-vk: Sign in with VK

@@ -34,6 +34,6 @@
             i.fas.fa-lock
 
       .actions
-        = f.submit t('.sign-up'), class: 'button is-link mr-3'
-        - resource_class.omniauth_providers.each do |provider|
-          = link_to t('.provider'), omniauth_authorize_path(resource_name, provider), method: :post, class: 'button is-link'
+        = f.submit t('.sign-up'), class: 'button is-link'
+        = link_to t('.provider'), user_facebook_omniauth_authorize_path, method: :post, class: 'button is-link ml-3'
+        = link_to t('.provider-vk'), user_vkontakte_omniauth_authorize_path, method: :post, class: 'button is-link ml-3'

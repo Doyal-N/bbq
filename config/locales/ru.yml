@@ -68,6 +68,7 @@ ru:
         repeat_password: Повторите пароль
         sign-up: Зарегистрироваться
         provider: Войти через FB
+        provider-vk: Войти с VK
     sessions:
       new:
         account: Личный аккаунт

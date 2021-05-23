@@ -9,7 +9,7 @@ class FindUserOauthService
     url = "https://#{provider}.com/#{id}"
 
     User.where(url: url, provider: provider).first_or_create! do |user|
-      user.email = auth.info.email
+      user.email = auth.info.email || 'example@mail.ru'
       user.name = auth.info.name
       user.password = Devise.friendly_token.first(16)
     end

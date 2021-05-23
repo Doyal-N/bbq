@@ -273,6 +273,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :facebook, ENV['FACEBOOK_ID'], ENV['FACEBOOK_SECRET'], callback_url: 'https://fin-catalog.ru/users/auth/facebook/callback'
+  config.omniauth :facebook, ENV['VK_ID'], ENV['VK_SECRET'], callback_url: 'https://fin-catalog.ru/users/auth/vkontakte/callback'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

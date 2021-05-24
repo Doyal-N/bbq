@@ -1,6 +1,6 @@
 class FindUserOauthService
   def self.find_user(auth)
-    user = User.where(email: auth.info.email).first
+    user = User.find_by(email: auth.info.email)
 
     return user if user.present?
 
@@ -8,8 +8,8 @@ class FindUserOauthService
     id = auth.extra.raw_info.id
     url = "https://#{provider}.com/#{id}"
 
-    User.where(url: url, provider: provider).first_or_create! do |user|
-      user.email = auth.info.email || 'example@mail.ru'
+    User.find_or_create_by!(url: url, provider: provider) do |user|
+      user.email = auth.info.email || "example_#{id}@mail.ru"
       user.name = auth.info.name
       user.password = Devise.friendly_token.first(16)
     end

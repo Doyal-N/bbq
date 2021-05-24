@@ -183,3 +183,4 @@ ru:
       dimension_height_inclusion: высота должна быть между %{min} и %{max} пикселей.
   pundit:
     not_authorized: Приватное событие! Доступ по коду.
+    wrong_pincode: Неверный пинкод!

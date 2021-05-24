@@ -1,38 +1,53 @@
 require 'rails_helper'
 
-RSpec.describe EventPolicy, type: :policy do
-  let(:user) { create(:user) }
-  let(:other_user) { create(:user) }
-  let(:event) { create(:event, user: user) }
-  let(:event_w_pincode) { create(:event, user: user, pincode: '222') }
-
+describe EventPolicy do
   subject { described_class }
 
-  context 'when user owner' do
-    permissions :destroy?, :edit?, :update? do
-      it { is_expected.to permit(user, event) }
-    end
+  let(:user) { create(:user) }
+  let(:event_not_pincode) { create(:event, user: user) }
+  let(:event_with_pincode) { create(:event, user: user, pincode: '111') }
 
-    permissions :new?, :create? do
-      it { is_expected.to permit(user, event) }
+  let(:correct_cookies) { { "event_#{event_with_pincode.id}_pincode" => '111' } }
+
+  describe 'when event creator' do
+    let(:creator) { UserContext.new(user, {}) }
+
+    permissions :edit?, :update?, :destroy? do
+      it { is_expected.to permit(creator, event_not_pincode) }
     end
 
     permissions :show? do
-      it { is_expected.to permit(user, event_w_pincode) }
+      it { is_expected.to permit(creator, event_with_pincode) }
     end
   end
 
-  context 'when user not an owner' do
-    permissions :destroy?, :edit?, :update? do
-      it { is_expected.not_to permit(other_user, event) }
-    end
+  describe 'when other user' do
+    let(:other_user) { create(:user) }
+    let(:other_user_not_pincode) { UserContext.new(other_user, {}) }
+    let(:other_user_w_pincode) { UserContext.new(other_user, correct_cookies) }
 
-    permissions :new?, :create? do
-      it { is_expected.to permit(other_user, event) }
+    permissions :edit?, :update?, :destroy? do
+      it { is_expected.not_to permit(other_user_not_pincode, event_not_pincode) }
     end
 
     permissions :show? do
-      it { is_expected.not_to permit(other_user, event_w_pincode) }
+      it { is_expected.not_to permit(other_user_not_pincode, event_with_pincode) }
+    end
+
+    permissions :show? do
+      it { is_expected.to permit(other_user_w_pincode, event_with_pincode) }
+    end
+  end
+
+  describe 'when unauthorized user' do
+    let(:anonim) { UserContext.new(nil, correct_cookies) }
+
+    permissions :edit?, :update?, :destroy? do
+      it { is_expected.not_to permit(anonim, event_not_pincode) }
+    end
+
+    permissions :show? do
+      it { is_expected.to permit(anonim, event_with_pincode) }
     end
   end
 end

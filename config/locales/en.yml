@@ -38,5 +38,9 @@ en:
         change: Change my password
     registrations:
       new:
-        provider: Sign in with FB
-        provider-vk: Sign in with VK
+        provider: Sign with FB
+        provider-vk: Sign with VK
+    sessions:
+      new:
+        provider: Login with FB
+        provider-vk: Login with VK

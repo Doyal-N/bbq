@@ -26,5 +26,7 @@
 
       .actions
         = f.submit t('.log-in'), class: 'button is-link'
+        = link_to t('.provider'), user_facebook_omniauth_authorize_path, method: :post, class: 'button is-link ml-3'
+        = link_to t('.provider-vk'), user_vkontakte_omniauth_authorize_path, method: :post, class: 'button is-link ml-3'
 
       p.mt-2= link_to t('.forgot'), new_password_path(resource_name), class: 'has-text-white'

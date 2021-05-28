@@ -20,10 +20,8 @@ class EventPolicy < ApplicationPolicy
   end
 
   def show?
-    return true if record.pincode.blank? || is_owner? ||
+    record.pincode.blank? || is_owner? ||
       record.true_pincode?(cookies["event_#{record.id}_pincode"])
-
-    false
   end
 
   private

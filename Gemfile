@@ -11,6 +11,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
 gem "omniauth-rails_csrf_protection"
 gem 'pg', '~> 1.1'
+gem 'pundit'
 gem 'rails-i18n'
 gem 'resque'
 gem 'slim-rails'
@@ -24,6 +25,8 @@ gem 'image_processing'
 group :development, :test do
   gem 'puma', '~> 5.0'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do

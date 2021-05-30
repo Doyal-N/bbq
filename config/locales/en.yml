@@ -38,3 +38,12 @@ en:
         change: Change my password
   pundit:
     wrong_pincode: Wrong pincode!
+
+    registrations:
+      new:
+        provider: Sign with FB
+        provider-vk: Sign with VK
+    sessions:
+      new:
+        provider: Login with FB
+        provider-vk: Login with VK

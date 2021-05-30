@@ -69,12 +69,16 @@ ru:
         password: Пароль
         repeat_password: Повторите пароль
         sign-up: Зарегистрироваться
+        provider: Войти c FB
+        provider-vk: Войти с VK
     sessions:
       new:
         account: Личный аккаунт
         password: Пароль
         log-in: Войти
         forgot: Забыли пароль?
+        provider: Войти с FB
+        provider-vk: Войти с VK
     passwords:
       new:
         forgot: Забыли пароль?

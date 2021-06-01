@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FindUserOauthService
   def self.find_user(auth)
     user = User.find_by(email: auth.info.email)

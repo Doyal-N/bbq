@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module NotifyService
   def self.send_mail_about_new_record(record)
     emails = collect_emails(record)

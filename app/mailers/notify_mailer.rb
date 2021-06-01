@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class NotifyMailer < ApplicationMailer
   def added_image(image, email)
     @event = image.event

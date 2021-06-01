@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
@@ -40,9 +42,9 @@ set :workers, { "#{fetch(:application)}*" => 1 }
 #
 # Global options
 # --------------
-  set :ssh_options, {
-    port: 821
-  }
+set :ssh_options, {
+  port: 821
+}
 
 # The server-based syntax can be used to override options:
 # ------------------------------------

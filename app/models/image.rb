@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Image < ApplicationRecord
   belongs_to :user
   belongs_to :event
@@ -5,7 +7,7 @@ class Image < ApplicationRecord
   validates :title, :image, presence: true
   validate :user_is_event_member
   validates :image, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg'],
-    dimension: { width: { min: 200, max: 2000 }, height: { min: 200, max: 1400 } }
+                    dimension: { width: { min: 200, max: 2000 }, height: { min: 200, max: 1400 } }
 
   has_one_attached :image
 

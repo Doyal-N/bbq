@@ -13,4 +13,8 @@ class Event < ApplicationRecord
   def user_is_member?(user)
     subscribers.member?(user) || user&.creator?(self)
   end
+
+  def true_pincode?(input_pin)
+    pincode == input_pin
+  end
 end

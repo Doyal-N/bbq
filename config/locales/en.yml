@@ -36,6 +36,9 @@ en:
     passwords:
       edit:
         change: Change my password
+  pundit:
+    wrong_pincode: Wrong pincode!
+
     registrations:
       new:
         provider: Sign with FB

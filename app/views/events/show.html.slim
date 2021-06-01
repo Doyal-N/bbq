@@ -14,7 +14,7 @@ h1.title.is-1.has-text-centered.is-uppercase.is-family-code.has-text-white= @eve
         u= t('.place')
       = content_tag('div', '', id: 'map', style: "width: 500px; height: 300px", data: { address: @event.address })
 
-    - if current_user_can_edit?(@event)
+    - if policy(@event).destroy?
       = link_to t('.edit'), edit_event_path(@event), class:'button is-link is-light mt-3'
       = link_to t('.delete'), event_path(@event), class: 'button is-danger has-text-black mt-3 ml-3', \
         method: :delete, data: { confirm: t('.sure') }

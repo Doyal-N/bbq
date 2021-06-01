@@ -18,6 +18,7 @@ ru:
         address: Место встречи
         datetime: Дата и время
         description: Описание
+        pincode: Пин-код
       comment:
         user_name: Имя
         user_email: Email
@@ -35,6 +36,7 @@ ru:
       created: Вы создали новое мероприятие
       updated: Вы обновили мероприятие
       destroyed: Вы удалили мероприятие
+      wrong_pincode: Неверный код! Доступ запрещен.
     users:
       updated: Вы обновили свой профиль
     comments:
@@ -118,6 +120,10 @@ ru:
       subscribe: Подписаны на событие
       producer: Организатор
       photo: Добавить фото
+    password_form:
+      send: Отправить
+      main: На главную
+      pin: Введите пин-код
   layouts:
     application:
       title: Событийка
@@ -179,3 +185,6 @@ ru:
       not_member: не является участником события
       dimension_width_inclusion: ширина должна быть между %{min} и %{max} пикселей.
       dimension_height_inclusion: высота должна быть между %{min} и %{max} пикселей.
+  pundit:
+    not_authorized: Приватное событие! Доступ по коду.
+    wrong_pincode: Неверный пинкод!

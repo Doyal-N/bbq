@@ -50,3 +50,6 @@ $ rails db:migrate
 Запуск для доступа по localhost:3000
 
 `$ rails s`
+
+### ToDo
++ Прикрутить админку
